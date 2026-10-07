@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
   images: {
+    unoptimized: true,
     // Avoid long hangs when remote assets 404 / are slow (was breaking client navigations).
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
