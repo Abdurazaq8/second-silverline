@@ -27,7 +27,6 @@ const outfit = Outfit({
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://silverline-engineering.com"),
   title: "Silverline Engineering - Quality Construction & Engineering Services",
   description: "Zambian owned Construction Company specializing in Civil, Electrical, Mechanical, and Solar Engineering services.",
   keywords: ["Construction", "Engineering", "Zambia", "Civil Engineering", "Electrical Engineering", "Mechanical Engineering", "Solar Energy", "Silverline"],

@@ -13,13 +13,12 @@ export default function Projects() {
   const featured = projects.slice(0, 3);
 
   return (
-    <div id="projects" className="section background blueprint-grid w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[var(--background)] mb-[14px]">
+    <div id="projects" className="section background w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[var(--background)] mb-[14px]">
       <div className="content max-w-[1200px] mx-auto w-full">
         
         {/* Albion Block Heading */}
         <div className="block-heading flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="block-heading-text">
-            <span className="cad-tag mb-2">REG // PORTFOLIO-LANDMARK</span>
             <div className="subtitle flex items-center mb-3">
               <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
               <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
@@ -54,10 +53,8 @@ export default function Projects() {
                 {/* Image Link with Hover Zoom */}
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="link-image-project relative w-full aspect-[16/11] mb-5 overflow-hidden block bg-[var(--background)] border border-[var(--border)]"
+                  className="link-image-project relative w-full aspect-[16/11] mb-5 overflow-hidden block bg-[var(--background)]"
                 >
-                  <span className="cad-crosshair-tl" aria-hidden="true">+</span>
-                  <span className="cad-crosshair-br" aria-hidden="true">+</span>
                   {isLocalImage(project.image) ? (
                     <Image
                       src={project.image}
@@ -79,14 +76,9 @@ export default function Projects() {
                   )}
                 </Link>
 
-                {/* Category Type & DWG tag */}
-                <div className="flex items-center justify-between mb-2">
-                  <div className="text-project-type text-[13px] font-medium uppercase tracking-[1.5px] text-[var(--info-text)]">
-                    {project.category}
-                  </div>
-                  <span className="cad-tag text-[9px] text-[var(--paragraphs-dark)]">
-                    DWG // {project.slug.toUpperCase().slice(0, 10)}
-                  </span>
+                {/* Category Type */}
+                <div className="text-project-type text-[13px] font-medium uppercase tracking-[1.5px] text-[var(--info-text)] mb-2">
+                  {project.category}
                 </div>
 
                 {/* Project Title + Dual Sliding Arrow Link */}

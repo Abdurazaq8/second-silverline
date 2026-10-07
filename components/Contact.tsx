@@ -49,7 +49,6 @@ export default function Contact() {
             {/* Header Block */}
             <Reveal width="100%">
               <div>
-                <span className="cad-tag mb-2 block">DWG // COMM-INQ-2026</span>
                 <div className="subtitle flex items-center mb-3">
                   <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
                   <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
@@ -174,14 +173,9 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Architectural Quotation Form */}
-          <div className="bg-[var(--background)] border border-[var(--border)] p-5 sm:p-8 lg:p-12 shadow-sm relative">
-            <span className="cad-crosshair-tl" aria-hidden="true">+</span>
-            <span className="cad-crosshair-tr" aria-hidden="true">+</span>
-            <span className="cad-crosshair-bl" aria-hidden="true">+</span>
-            <span className="cad-crosshair-br" aria-hidden="true">+</span>
+          <div className="bg-[var(--background)] border border-[var(--border)] p-5 sm:p-8 lg:p-12 shadow-sm">
             <Reveal width="100%">
               <div className="mb-8">
-                <span className="cad-tag mb-2 block">FORM // SPEC-REQ-2026</span>
                 <div className="subtitle flex items-center mb-2">
                   <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
                   <div className="text-subtitle ml-3 text-[13px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">

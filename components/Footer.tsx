@@ -134,10 +134,6 @@ export default function Footer() {
             © {new Date().getFullYear()} Silverline Engineering Limited. All rights reserved.
           </div>
 
-          <div className="cad-tag text-[10px] text-[#535c62] tracking-[2px] hidden md:block">
-            CAD // NCC GRADE 1 CIV &amp; STRUCT // REG-ZAMBIA
-          </div>
-
           <div className="flex items-center gap-3">
             <a
               href="https://wa.me/260966626579"

@@ -137,7 +137,6 @@ export default function Services() {
         {/* Section Header */}
         <div className="block-heading flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="block-heading-text">
-            <span className="cad-tag mb-2">SCHEDULE // SPEC-DIV-12</span>
             <div className="subtitle flex items-center mb-3">
               <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
               <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
@@ -158,9 +157,7 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <Reveal key={index} delay={index * 0.05} width="100%">
-              <div className="bg-white border border-[var(--border)] group h-full flex flex-col service-card-hover cursor-pointer relative">
-                <span className="cad-crosshair-tl" aria-hidden="true">+</span>
-                <span className="cad-crosshair-tr" aria-hidden="true">+</span>
+              <div className="bg-white border border-[var(--border)] group h-full flex flex-col service-card-hover cursor-pointer">
                 
                 {/* Media Container (Image or Video) */}
                 {(service.image || service.video) && (
@@ -195,13 +192,8 @@ export default function Services() {
                 {/* Content Box */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-[var(--heading)] group-hover:text-[var(--accent)] transition-colors">
-                        <service.icon size={36} />
-                      </div>
-                      <span className="cad-tag text-[9px] text-[var(--paragraphs-dark)]">
-                        DIV // {String(index + 1).padStart(2, "0")}
-                      </span>
+                    <div className="mb-4 text-[var(--heading)] group-hover:text-[var(--accent)] transition-colors">
+                      <service.icon size={36} />
                     </div>
                     <h3 className="text-[20px] font-medium text-[var(--heading)] leading-[125%] mb-3 group-hover:text-[var(--accent)] transition-colors">
                       {service.title}

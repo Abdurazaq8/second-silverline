@@ -46,7 +46,7 @@ export default function TrustStrip() {
   ];
 
   return (
-    <section id="trust" className="section background blueprint-grid w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[var(--background)] mb-[14px]">
+    <section id="trust" className="section background w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[var(--background)] mb-[14px]">
       <div className="content max-w-[1200px] mx-auto w-full">
         
         {/* Level 1: Primary Section Header with Clear Architectural Hierarchy */}
@@ -63,22 +63,16 @@ export default function TrustStrip() {
             </h2>
           </div>
 
-          <div className="flex flex-col items-start md:items-end gap-1">
-            <span className="cad-tag">DWG // TRUST-REG-2026</span>
-            <p className="text-[16px] text-[var(--paragraphs)] max-w-sm m-0 leading-relaxed md:text-right">
-              Operating with full regulatory clearance from Zambia&apos;s apex engineering bodies, trusted by industry-leading commercial and mining enterprises.
-            </p>
-          </div>
+          <p className="text-[16px] text-[var(--paragraphs)] max-w-sm m-0 leading-relaxed">
+            Operating with full regulatory clearance from Zambia&apos;s apex engineering bodies, trusted by industry-leading commercial and mining enterprises.
+          </p>
         </div>
 
         {/* Level 2: Primary Tier — 3 High-Status Statutory Accreditation Cards */}
         <div className="mb-16">
-          <div className="text-[12px] font-semibold uppercase tracking-[1.5px] text-[var(--info-text)] mb-6 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-[var(--accent)] inline-block shrink-0" />
-              <span>Apex Statutory Regulators &amp; Governing Bodies</span>
-            </div>
-            <span className="cad-tag hidden sm:inline">SCALE 1:100 // CERT-APEX</span>
+          <div className="text-[12px] font-semibold uppercase tracking-[1.5px] text-[var(--info-text)] mb-6 flex items-center gap-2">
+            <span className="w-2 h-2 bg-[var(--accent)] inline-block shrink-0" />
+            <span>Apex Statutory Regulators &amp; Governing Bodies</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
@@ -86,12 +80,6 @@ export default function TrustStrip() {
               <Reveal key={cert.acronym} delay={index * 0.1} width="100%">
                 <div className="bg-white border border-[var(--border)] p-6 sm:p-8 flex flex-col justify-between h-full group rounded-none hover:border-[var(--accent)] hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer relative">
                   
-                  {/* CAD Technical Corner Crosshairs */}
-                  <span className="cad-crosshair-tl" aria-hidden="true">+</span>
-                  <span className="cad-crosshair-tr" aria-hidden="true">+</span>
-                  <span className="cad-crosshair-bl" aria-hidden="true">+</span>
-                  <span className="cad-crosshair-br" aria-hidden="true">+</span>
-
                   {/* Top: Logo and Status Badge */}
                   <div>
                     <div className="flex items-center justify-between mb-8 pb-5 border-b border-[var(--border)]">
@@ -112,14 +100,9 @@ export default function TrustStrip() {
 
                     {/* Acronym and Full Title */}
                     <div className="mb-3">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-[13px] font-bold uppercase tracking-[1.5px] text-[var(--heading)] block">
-                          {cert.acronym}
-                        </span>
-                        <span className="cad-tag text-[9px] text-[var(--paragraphs-dark)]">
-                          REF #{index + 1}
-                        </span>
-                      </div>
+                      <span className="text-[13px] font-bold uppercase tracking-[1.5px] text-[var(--heading)] block mb-1">
+                        {cert.acronym}
+                      </span>
                       <h3 className="text-[20px] font-medium text-[var(--heading)] leading-[125%] group-hover:text-[var(--accent)] transition-colors m-0">
                         {cert.name}
                       </h3>
