@@ -27,6 +27,9 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
+        {/* Architectural Blueprint Grid Overlay */}
+        <div className="absolute inset-0 blueprint-grid-dark opacity-35 z-10 pointer-events-none" />
+
         {heroVideo && !videoError && (
           <video
             autoPlay
@@ -46,6 +49,16 @@ export default function Hero() {
       {/* High-Contrast Centered Content */}
       <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-8 text-center flex flex-col items-center">
         
+        {/* Architectural Datum / Survey Telemetry Tag */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-6 bg-black/50 backdrop-blur-md border border-white/20 text-white/90 font-mono text-[10px] sm:text-[11px] uppercase tracking-[2px]"
+        >
+          <span className="w-1.5 h-1.5 bg-[var(--accent)] shrink-0 animate-pulse" />
+          <span>LUSAKA HQ // 15°25&apos;35&quot;S 28°19&apos;22&quot;E // NCC GRADE 1</span>
+        </motion.div>
 
         {/* Monumental Clean White Headline */}
         <motion.h1

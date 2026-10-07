@@ -155,6 +155,7 @@ export default function Capabilities() {
         {/* Section Header */}
         <div className="block-heading flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="block-heading-text">
+            <span className="cad-tag mb-2">DWG // CAP-PLANT-2026</span>
             <div className="subtitle flex items-center mb-3">
               <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
               <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
@@ -175,7 +176,11 @@ export default function Capabilities() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-20">
           {capabilityCards.map((card, index) => (
             <Reveal key={index} delay={index * 0.1} width="100%">
-              <div className="bg-white border border-[var(--border)] group h-full flex flex-col capability-card-hover cursor-pointer">
+              <div className="bg-white border border-[var(--border)] group h-full flex flex-col capability-card-hover cursor-pointer relative">
+                <span className="cad-crosshair-tl" aria-hidden="true">+</span>
+                <span className="cad-crosshair-tr" aria-hidden="true">+</span>
+                <span className="cad-crosshair-bl" aria-hidden="true">+</span>
+                <span className="cad-crosshair-br" aria-hidden="true">+</span>
                 
                 {/* Image Container with Badge */}
                 <div className="relative h-48 w-full overflow-hidden bg-[var(--background)]">
@@ -195,9 +200,14 @@ export default function Capabilities() {
                 {/* Card Content */}
                 <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between">
                   <div>
-                    <span className="text-3xl font-medium text-[var(--heading)] block mb-1 group-hover:text-[var(--accent)] transition-colors">
-                      {card.value}
-                    </span>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-3xl font-medium text-[var(--heading)] group-hover:text-[var(--accent)] transition-colors">
+                        {card.value}
+                      </span>
+                      <span className="cad-tag text-[9px] text-[var(--paragraphs-dark)]">
+                        CAP // 0{index + 1}
+                      </span>
+                    </div>
                     <h3 className="text-[18px] font-medium text-[var(--heading)] mb-2">
                       {card.title}
                     </h3>
@@ -261,6 +271,10 @@ export default function Capabilities() {
                 
                 {/* Main Video Box */}
                 <div className="relative overflow-hidden aspect-video border border-[var(--border)] bg-black group shadow-sm">
+                  <span className="cad-crosshair-tl" aria-hidden="true">+</span>
+                  <span className="cad-crosshair-tr" aria-hidden="true">+</span>
+                  <span className="cad-crosshair-bl" aria-hidden="true">+</span>
+                  <span className="cad-crosshair-br" aria-hidden="true">+</span>
                   <video
                     id="cnc-capability-video"
                     src="/capabilities/cnc-machine.mp4"
@@ -274,6 +288,9 @@ export default function Capabilities() {
                   
                   <div className="absolute top-4 left-4 bg-[var(--accent)] text-[var(--heading)] text-[11px] font-bold px-3 py-1 uppercase tracking-wider">
                     CNC Precision Cutting
+                  </div>
+                  <div className="absolute top-4 right-4 bg-black/75 backdrop-blur-sm px-2.5 py-1 cad-tag text-[9px] text-white/90 border border-white/20">
+                    TOL // ±0.5MM
                   </div>
 
                   <div className="absolute bottom-4 right-4 flex items-center gap-2">

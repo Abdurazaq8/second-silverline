@@ -45,6 +45,7 @@ export default function About() {
         {/* Section Header */}
         <div className="block-heading flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="block-heading-text">
+            <span className="cad-tag mb-2">CORP // SPEC-GOV-2026</span>
             <div className="subtitle flex items-center mb-3">
               <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
               <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
@@ -121,14 +122,21 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
             {safetyPoints.map((point, index) => (
               <Reveal key={index} delay={index * 0.1} width="100%">
-                <div className="bg-[var(--background)] border border-[var(--border)] p-6 sm:p-8 flex flex-col justify-between h-full group hover:border-[var(--accent)] hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                <div className="bg-[var(--background)] border border-[var(--border)] p-6 sm:p-8 flex flex-col justify-between h-full group hover:border-[var(--accent)] hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer relative">
+                  <span className="cad-crosshair-tl" aria-hidden="true">+</span>
+                  <span className="cad-crosshair-br" aria-hidden="true">+</span>
                   
                   <div>
                     {/* Top Row: Number & Icon */}
                     <div className="flex items-center justify-between mb-6 pb-4 border-b border-[var(--border)]/80">
-                      <span className="text-2xl font-bold text-[var(--accent)] tracking-tight">
-                        {point.number}
-                      </span>
+                      <div>
+                        <span className="text-2xl font-bold text-[var(--accent)] tracking-tight block">
+                          {point.number}
+                        </span>
+                        <span className="cad-tag text-[9px] text-[var(--paragraphs-dark)] block mt-0.5">
+                          HSE // 0{index + 1}
+                        </span>
+                      </div>
                       <div className="w-11 h-11 bg-white border border-[var(--border)] text-[var(--heading)] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] flex items-center justify-center transition-all duration-300">
                         <point.icon size={20} />
                       </div>

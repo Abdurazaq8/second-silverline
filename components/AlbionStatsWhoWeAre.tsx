@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AlbionStatsWhoWeAre() {
   return (
-    <div id="about" className="section background w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[var(--background)] mb-[14px]">
+    <div id="about" className="section background blueprint-grid w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[var(--background)] mb-[14px]">
       <div className="content max-w-[1200px] mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           
@@ -12,10 +12,15 @@ export default function AlbionStatsWhoWeAre() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 order-2 lg:order-1">
             
             {/* Stat 1 */}
-            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/albion/icon_1.svg" alt="" className="w-6 h-6" />
+            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group relative">
+              <span className="cad-crosshair-tl" aria-hidden="true">+</span>
+              <span className="cad-crosshair-br" aria-hidden="true">+</span>
+              <div className="flex items-center justify-between mb-6 sm:mb-8">
+                <span className="cad-tag text-[9px] text-[var(--paragraphs-dark)]">SPEC // FAB-PLANT</span>
+                <div className="icon-stats-block bg-[var(--background)] p-3 inline-block">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/albion/icon_1.svg" alt="" className="w-6 h-6" />
+                </div>
               </div>
               <div className="stats-block">
                 <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] tracking-tight leading-none mb-3">
@@ -28,10 +33,15 @@ export default function AlbionStatsWhoWeAre() {
             </div>
 
             {/* Stat 2 */}
-            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/albion/icon_2.svg" alt="" className="w-6 h-6" />
+            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group relative">
+              <span className="cad-crosshair-tl" aria-hidden="true">+</span>
+              <span className="cad-crosshair-br" aria-hidden="true">+</span>
+              <div className="flex items-center justify-between mb-6 sm:mb-8">
+                <span className="cad-tag text-[9px] text-[var(--paragraphs-dark)]">FLEET // MULTI-DISC</span>
+                <div className="icon-stats-block bg-[var(--background)] p-3 inline-block">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/albion/icon_2.svg" alt="" className="w-6 h-6" />
+                </div>
               </div>
               <div className="stats-block">
                 <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] tracking-tight leading-none mb-3">
@@ -44,10 +54,15 @@ export default function AlbionStatsWhoWeAre() {
             </div>
 
             {/* Stat 3 */}
-            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/albion/icon_7.svg" alt="" className="w-6 h-6" />
+            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group relative">
+              <span className="cad-crosshair-tl" aria-hidden="true">+</span>
+              <span className="cad-crosshair-br" aria-hidden="true">+</span>
+              <div className="flex items-center justify-between mb-6 sm:mb-8">
+                <span className="cad-tag text-[9px] text-[var(--paragraphs-dark)]">AUDIT // COMPLIANCE</span>
+                <div className="icon-stats-block bg-[var(--background)] p-3 inline-block">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/albion/icon_7.svg" alt="" className="w-6 h-6" />
+                </div>
               </div>
               <div className="stats-block">
                 <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] tracking-tight leading-none mb-3">
@@ -60,10 +75,15 @@ export default function AlbionStatsWhoWeAre() {
             </div>
 
             {/* Stat 4 */}
-            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/albion/icon_4.svg" alt="" className="w-6 h-6" />
+            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group relative">
+              <span className="cad-crosshair-tl" aria-hidden="true">+</span>
+              <span className="cad-crosshair-br" aria-hidden="true">+</span>
+              <div className="flex items-center justify-between mb-6 sm:mb-8">
+                <span className="cad-tag text-[9px] text-[var(--paragraphs-dark)]">TRACK // INFRA-EXP</span>
+                <div className="icon-stats-block bg-[var(--background)] p-3 inline-block">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/albion/icon_4.svg" alt="" className="w-6 h-6" />
+                </div>
               </div>
               <div className="stats-block">
                 <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] tracking-tight leading-none mb-3">
@@ -79,6 +99,7 @@ export default function AlbionStatsWhoWeAre() {
 
           {/* Right Side (Desktop) / Top Side (Mobile): Who We Are Block */}
           <div className="block-right flex flex-col items-start order-1 lg:order-2 w-full">
+            <span className="cad-tag mb-2">DWG // SEC-02 ARCH-CORP</span>
             <div className="subtitle flex items-center mb-3">
               <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
               <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">

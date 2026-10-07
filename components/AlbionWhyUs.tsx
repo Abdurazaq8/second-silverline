@@ -11,6 +11,7 @@ export default function AlbionWhyUs() {
           
           {/* Left Block */}
           <div className="block-left flex flex-col items-start w-full">
+            <span className="cad-tag mb-2">SPEC // ENG-DISCIPLINE</span>
             <div className="subtitle flex items-center mb-3">
               <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
               <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
@@ -40,7 +41,9 @@ export default function AlbionWhyUs() {
           {/* Right Block: Signature Albion Overlapping Images */}
           <div className="image-block relative w-full aspect-[4/3] sm:aspect-[16/11] group cursor-pointer pr-3 sm:pr-6 pb-3 sm:pb-6">
             {/* Base Image */}
-            <div className="relative w-full h-full overflow-hidden">
+            <div className="relative w-full h-full overflow-hidden border border-[var(--border)]">
+              <span className="cad-crosshair-tl" aria-hidden="true">+</span>
+              <span className="cad-crosshair-tr" aria-hidden="true">+</span>
               <Image
                 src="/services/building-construction.jpg"
                 alt="Silverline Engineering Building Construction"
@@ -55,6 +58,11 @@ export default function AlbionWhyUs() {
               className="image-absolute absolute w-[52%] h-[58%] bottom-0 right-0 sm:bottom-[-4%] sm:right-[-4%] overflow-hidden border-4 sm:border-8 border-white transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:border-[var(--accent)]"
               style={{ boxShadow: "0 35px 120px rgba(16, 27, 34, 0.25)" }}
             >
+              <span className="cad-crosshair-tl" aria-hidden="true">+</span>
+              <span className="cad-crosshair-br" aria-hidden="true">+</span>
+              <div className="absolute top-2 left-2 z-10 cad-tag bg-white/90 px-2 py-0.5 text-[8px] text-[var(--heading)]">
+                TOL // ±0.5MM
+              </div>
               <Image
                 src="/capabilities/fabrication-facility.jpg"
                 alt="Lusaka Fabrication Workshop"
