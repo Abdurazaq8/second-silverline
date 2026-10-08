@@ -78,7 +78,7 @@ export default function Capabilities() {
       value: "100%",
       title: "Regulatory Compliance",
       badge: "Certified Standards",
-      description: "Full statutory compliance including ZRA Tax Clearance, NAPSA, Workers' Compensation Fund, and ISO certification in progress.",
+      description: "Full statutory compliance including ZRA Tax Clearance, NAPSA, Workers' Compensation Fund, and ISO 14001, 45001, & 9001 standards.",
       image: "/capabilities/welding-workshop.jpg",
       icon: ShieldCheck,
     },
@@ -127,24 +127,34 @@ export default function Capabilities() {
 
   const certifications = [
     {
-      name: "Zambia Revenue Authority (ZRA)",
-      status: "Tax Clearance Certified",
-      badge: "Compliant",
-    },
-    {
-      name: "National Pension Scheme Authority (NAPSA)",
-      status: "Statutory Workforce Compliance",
+      name: "ISO 9001 : 2015",
+      status: "Quality Management System (QMS)",
       badge: "Certified",
     },
     {
-      name: "Workers’ Compensation Fund Control Board",
+      name: "ISO 14001 : 2015",
+      status: "Environmental Management System (EMS)",
+      badge: "Certified",
+    },
+    {
+      name: "ISO 45001 : 2018",
+      status: "Occupational Health & Safety (OH&S)",
+      badge: "Certified",
+    },
+    {
+      name: "National Council for Construction (NCC)",
+      status: "Grade 1 Heavy Civil & Building Works",
+      badge: "Grade 1",
+    },
+    {
+      name: "Workers’ Compensation Fund (WCFCB)",
       status: "Full Statutory Occupational Coverage",
       badge: "Compliant",
     },
     {
-      name: "ISO Quality Management Standards",
-      status: "ISO Certification Process",
-      badge: "In Progress",
+      name: "Engineering Institution of Zambia (EIZ)",
+      status: "Chartered Structural & Civil Engineering Practice",
+      badge: "Chartered",
     },
   ];
 

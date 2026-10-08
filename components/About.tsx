@@ -26,8 +26,8 @@ const safetyPoints = [
   {
     number: "03",
     icon: FileCheck,
-    title: "Statutory Compliance",
-    description: "Complete standing with ZRA, NAPSA, Workers' Compensation Fund, and regular third-party safety audits.",
+    title: "Statutory & ISO Compliance",
+    description: "Certified standards under ISO 9001, ISO 14001, and ISO 45001, with complete standing with ZRA, NAPSA, and Workers' Compensation Fund.",
   },
   {
     number: "04",

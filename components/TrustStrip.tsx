@@ -8,18 +8,23 @@ export default function TrustStrip() {
   const certifications = [
     {
       name: "National Council for Construction",
-      acronym: "NCC",
+      acronym: "NCC Grade 1",
       logo: "/logos/ncc.png",
     },
     {
       name: "Workers' Compensation Fund Control Board",
-      acronym: "WCFCB",
+      acronym: "WCFCB Compliant",
       logo: "/logos/wcfcb.png",
     },
     {
       name: "Engineering Institution of Zambia",
-      acronym: "EIZ",
+      acronym: "EIZ Practice",
       logo: "/logos/eiz.png",
+    },
+    {
+      name: "ISO 9001 (Quality) • ISO 14001 (Environment) • ISO 45001 (OH&S)",
+      acronym: "ISO 14001 • 45001 • 9001",
+      logo: "/logos/iso.svg",
     },
   ];
 
@@ -39,18 +44,18 @@ export default function TrustStrip() {
     <section id="trust" className="w-full bg-white border-b border-[var(--border)] py-7 sm:py-9 px-4 sm:px-8 lg:px-12">
       <div className="max-w-[1200px] mx-auto w-full">
         <Reveal width="100%">
-          <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-14 items-center justify-between">
+          <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 items-center justify-between">
             
-            {/* Left: Statutory Accreditations (Compact Static Badges) */}
+            {/* Left: Statutory Accreditations & ISO Certified (Full Brand Colors) */}
             <div className="flex-shrink-0 w-full lg:w-auto text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
                 <span className="w-1.5 h-1.5 bg-[var(--accent)] shrink-0" />
                 <span className="text-[11px] font-bold text-[var(--heading)] uppercase tracking-[1.5px]">
-                  Accredited By
+                  Accredited &amp; ISO Certified
                 </span>
               </div>
 
-              <div className="flex items-center justify-center lg:justify-start gap-6 sm:gap-8">
+              <div className="flex items-center justify-center lg:justify-start gap-5 sm:gap-6 flex-wrap">
                 {certifications.map((cert) => (
                   <div
                     key={cert.acronym}
@@ -79,7 +84,7 @@ export default function TrustStrip() {
             {/* Mobile Divider */}
             <div className="w-full h-[1px] bg-[var(--border)] lg:hidden" />
 
-            {/* Right: Trusted By Enterprise Clients (Compact Marquee) */}
+            {/* Right: Trusted By Enterprise Clients (Full Color Marquee) */}
             <div className="flex-1 w-full overflow-hidden min-w-0">
               <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
                 <span className="w-1.5 h-1.5 bg-[var(--accent)] shrink-0" />
@@ -102,7 +107,7 @@ export default function TrustStrip() {
                   {[...clients, ...clients].map((client, index) => (
                     <div
                       key={index}
-                      className="flex-shrink-0 hover:scale-105 transition-all duration-300 grayscale hover:grayscale-0 opacity-80 hover:opacity-100"
+                      className="flex-shrink-0 hover:scale-110 transition-transform duration-300 opacity-100"
                       title={client.name}
                     >
                       <Image
