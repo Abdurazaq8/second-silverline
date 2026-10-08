@@ -50,22 +50,22 @@ export default function Footer() {
             </div>
             <div className="flex flex-col space-y-1">
               <Link href="/#services" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                Services
+                Services (12 Disciplines)
               </Link>
-              <Link href="/#projects" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                Projects
+              <Link href="/projects" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
+                Projects Portfolio
               </Link>
               <Link href="/#capabilities" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                Capabilities
+                Plant &amp; Capabilities
               </Link>
               <Link href="/#process" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                How We Work
+                Engineering Process
               </Link>
               <Link href="/#about" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                About Us
+                About Company
               </Link>
               <Link href="/contact" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                Contact
+                Contact &amp; Tender Desk
               </Link>
             </div>
           </div>
@@ -76,23 +76,23 @@ export default function Footer() {
               Disciplines
             </div>
             <div className="flex flex-col space-y-1 text-[16px] text-[#95a3b2]">
-              <Link href="/#services" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                Structural Steel
+              <Link href="/projects?category=Industrial" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
+                Structural Steel Works
               </Link>
-              <Link href="/#services" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
+              <Link href="/projects/undp-bulking-centers" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
                 Pre-Engineered Units
               </Link>
-              <Link href="/#services" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
+              <Link href="/projects?category=Infrastructure" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
                 Civil Infrastructure
               </Link>
-              <Link href="/#services" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                Plant Equipment Hire
+              <Link href="/projects?category=Commercial" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
+                Commercial Developments
               </Link>
-              <Link href="/#services" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                Substations &amp; Power
+              <Link href="/projects/oryx-munali-filling-station" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
+                Filling Stations &amp; Tanks
               </Link>
-              <Link href="/#services" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                Solar Installations
+              <Link href="/projects/engic-solar-plants" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
+                Solar &amp; Substations
               </Link>
             </div>
           </div>

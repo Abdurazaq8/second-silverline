@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { rawProjects } from "@/lib/projects";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -14,8 +15,17 @@ import { getHeroPosterUrl, getHeroVideoUrl } from "@/lib/cloudinary";
 const categories = ["All", ...Array.from(new Set(rawProjects.map((p) => p.category)))];
 
 export default function ProjectsClient() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category");
+
   const [activeCategory, setActiveCategory] = useState("All");
   const [videoError, setVideoError] = useState(false);
+
+  useEffect(() => {
+    if (categoryParam && categories.includes(categoryParam)) {
+      setActiveCategory(categoryParam);
+    }
+  }, [categoryParam]);
 
   const heroPoster = getHeroPosterUrl() || "/construction_hero_modern_site.png";
   const heroVideo = getHeroVideoUrl() || "/whatsapp-hero-video.mp4";
@@ -26,7 +36,7 @@ export default function ProjectsClient() {
       : rawProjects.filter((p) => p.category === activeCategory);
 
   return (
-    <main className="min-h-screen bg-[#07172B]">
+    <main className="min-h-screen bg-white">
       <Navbar />
 
       {/* Portfolio Hero with Background Video & Cinematic Color Overlay */}
@@ -107,7 +117,7 @@ export default function ProjectsClient() {
       </section>
 
       {/* Albion Category Filter Tabs */}
-      <section className="sticky top-0 z-30 bg-[#0C2340]/95 backdrop-blur-md border-b border-white/10 py-3 sm:py-4 px-4 sm:px-8 lg:px-12 mb-[14px]">
+      <section className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-[var(--border)] py-3 sm:py-4 px-4 sm:px-8 lg:px-12 mb-[14px]">
         <div className="max-w-[1200px] mx-auto w-full flex items-center justify-center overflow-x-auto scrollbar-none py-1">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
             {categories.map((category) => (
@@ -116,8 +126,8 @@ export default function ProjectsClient() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-4 sm:px-5 py-2 sm:py-2.5 text-[11px] sm:text-[13px] font-semibold uppercase tracking-[1.2px] sm:tracking-[1.5px] rounded-none transition-all duration-200 cursor-pointer whitespace-nowrap ${
                   activeCategory === category
-                    ? "bg-[var(--accent)] text-[#0C2340] border border-[var(--accent)] font-bold shadow-md"
-                    : "bg-[#0F2847] text-slate-300 border border-white/10 hover:text-white hover:border-[var(--accent)]"
+                    ? "bg-[var(--heading)] text-white border border-[var(--heading)] shadow-sm"
+                    : "bg-white text-[var(--paragraphs)] border border-[var(--border)] hover:text-[var(--heading)] hover:border-[var(--heading)]"
                 }`}
               >
                 {category}
@@ -128,18 +138,18 @@ export default function ProjectsClient() {
       </section>
 
       {/* Albion Projects Collection Grid */}
-      <section className="w-full py-12 px-4 sm:px-8 lg:px-12 bg-[#07172B] mb-[14px]">
+      <section className="w-full py-12 px-4 sm:px-8 lg:px-12 bg-white mb-[14px]">
         <div className="max-w-[1200px] mx-auto w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="collection-item-project flex flex-col group bg-[#0F2847] border border-white/10 p-5 rounded-none hover:border-[var(--accent)] transition-all duration-300 shadow-lg"
+                className="collection-item-project flex flex-col group bg-white border border-[var(--border)] p-5 rounded-none hover:shadow-lg transition-shadow duration-300"
               >
                 {/* Image Link with Hover Zoom */}
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="link-image-project relative w-full aspect-[16/11] mb-5 overflow-hidden block bg-[#0C2340] rounded-none"
+                  className="link-image-project relative w-full aspect-[16/11] mb-5 overflow-hidden block bg-[var(--background)] rounded-none"
                 >
                   <CloudImage
                     src={project.localImage}
@@ -154,7 +164,7 @@ export default function ProjectsClient() {
 
                   {/* Sharp Category Tag */}
                   <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 bg-[var(--accent)] text-[#0C2340] text-[11px] font-bold uppercase tracking-[1.5px] rounded-none">
+                    <span className="px-3 py-1 bg-[var(--heading)] text-white text-[11px] font-semibold uppercase tracking-[1.5px] rounded-none">
                       {project.category}
                     </span>
                   </div>
@@ -171,13 +181,13 @@ export default function ProjectsClient() {
                 </Link>
 
                 {/* Client & Status */}
-                <div className="flex items-center justify-between text-[12px] font-semibold uppercase tracking-[1.5px] text-slate-400 mb-2">
+                <div className="flex items-center justify-between text-[12px] font-semibold uppercase tracking-[1.5px] text-[var(--info-text)] mb-2">
                   <span className="truncate max-w-[180px]">{project.client}</span>
                   <span
                     className={`font-semibold ${
                       project.status === "ongoing"
-                        ? "text-amber-400"
-                        : "text-emerald-400"
+                        ? "text-amber-600"
+                        : "text-emerald-700"
                     }`}
                   >
                     {project.status === "ongoing" ? "Active Site" : "Completed"}
@@ -190,7 +200,7 @@ export default function ProjectsClient() {
                   className="link-block-project block no-underline group/link"
                 >
                   <div className="block-project flex justify-between items-start pb-3">
-                    <h5 className="heading-project text-[22px] sm:text-[23px] font-medium text-white tracking-[-0.8px] leading-[120%] m-0 group-hover/link:text-[var(--accent)] transition-colors">
+                    <h5 className="heading-project text-[22px] sm:text-[23px] font-medium text-[var(--heading)] tracking-[-0.8px] leading-[120%] m-0 group-hover/link:text-[var(--accent)] transition-colors">
                       {project.title}
                     </h5>
                     <div className="icon-arrow relative w-[10px] h-[10px] overflow-hidden flex items-center justify-center ml-3 shrink-0 mt-2">
@@ -198,35 +208,35 @@ export default function ProjectsClient() {
                       <img
                         src="/albion/arrow_4.svg"
                         alt=""
-                        className="icon-arrow-a w-[10px] h-[10px] brightness-0 invert"
+                        className="icon-arrow-a w-[10px] h-[10px]"
                       />
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src="/albion/arrow_3.svg"
                         alt=""
-                        className="icon-arrow-b w-[10px] h-[10px] brightness-0 invert"
+                        className="icon-arrow-b w-[10px] h-[10px]"
                       />
                     </div>
                   </div>
 
                   {/* Albion Animated Line */}
-                  <div className="line-project w-full h-[1px] bg-white/10 relative overflow-hidden mb-4">
-                    <div className="line-full-anim w-full h-[1px] bg-[var(--accent)] absolute top-0 left-0" />
+                  <div className="line-project w-full h-[1px] bg-[var(--border)] relative overflow-hidden mb-4">
+                    <div className="line-full-anim w-full h-[1px] bg-[var(--heading)] absolute top-0 left-0" />
                   </div>
                 </Link>
 
                 {/* Description */}
-                <p className="text-[14px] sm:text-[15px] leading-[160%] text-slate-300 line-clamp-2 mb-6">
+                <p className="text-[14px] sm:text-[15px] leading-[160%] text-[var(--paragraphs)] line-clamp-2 mb-6">
                   {project.description}
                 </p>
 
                 {/* Footer Metadata */}
-                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[12px] text-slate-400 mt-auto font-medium">
+                <div className="pt-3 border-t border-[var(--border)] flex items-center justify-between text-[12px] text-[var(--info-text)] mt-auto font-medium">
                   <span className="flex items-center gap-1.5 truncate max-w-[200px]">
                     <MapPin size={13} className="shrink-0 text-[var(--accent)]" />
                     <span className="truncate">{project.location}</span>
                   </span>
-                  <span className="uppercase tracking-[1.5px] font-semibold text-white group-hover:text-[var(--accent)] transition-colors">
+                  <span className="uppercase tracking-[1.5px] font-semibold text-[var(--heading)] group-hover:text-[var(--accent)] transition-colors">
                     Case Study ↗
                   </span>
                 </div>
@@ -235,8 +245,8 @@ export default function ProjectsClient() {
           </div>
 
           {filteredProjects.length === 0 && (
-            <div className="text-center py-20 bg-[#0F2847] p-12 border border-white/10 text-slate-300">
-              <p className="text-[16px]">No projects found in this category.</p>
+            <div className="text-center py-20 bg-[var(--background)] p-12 border border-[var(--border)]">
+              <p className="text-[16px] text-[var(--paragraphs)]">No projects found in this category.</p>
             </div>
           )}
         </div>

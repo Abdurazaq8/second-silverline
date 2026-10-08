@@ -13,7 +13,7 @@ export default function Projects() {
   const featured = projects.slice(0, 3);
 
   return (
-    <div id="projects" className="section background w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[#0C2340] mb-[14px]">
+    <div id="projects" className="section background w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[var(--background)] mb-[14px]">
       <div className="content max-w-[1200px] mx-auto w-full">
         
         {/* Albion Block Heading */}
@@ -25,7 +25,7 @@ export default function Projects() {
                 Featured Projects
               </div>
             </div>
-            <h2 className="heading text-3xl sm:text-4xl lg:text-[52px] leading-[1.08] tracking-[-1.4px] font-medium text-white max-w-[620px] m-0">
+            <h2 className="heading text-3xl sm:text-4xl lg:text-[52px] leading-[1.08] tracking-[-1.4px] font-medium text-[var(--heading)] max-w-[620px] m-0">
               We build the structures <br className="hidden sm:inline" />and infrastructure
             </h2>
           </div>
@@ -33,9 +33,9 @@ export default function Projects() {
           <div className="block-heading-button w-full sm:w-auto">
             <Link
               href="/projects"
-              className="button w-full sm:w-auto bg-[var(--accent)] text-[#0C2340] px-8 py-5 inline-flex items-center justify-center no-underline hover:brightness-110 transition-all font-bold shadow-lg"
+              className="button w-full sm:w-auto bg-[var(--accent)] text-[var(--heading)] px-8 py-5 inline-flex items-center justify-center no-underline hover:opacity-90 transition-opacity"
             >
-              <span className="text-button text-[14px] uppercase tracking-[1.5px]">
+              <span className="text-button text-[14px] font-semibold uppercase tracking-[1.5px]">
                 All Projects
               </span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -53,7 +53,7 @@ export default function Projects() {
                 {/* Image Link with Hover Zoom */}
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="link-image-project relative w-full aspect-[16/11] mb-5 overflow-hidden block bg-[#08182D] border border-white/10 group-hover:border-[var(--accent)] transition-colors"
+                  className="link-image-project relative w-full aspect-[16/11] mb-5 overflow-hidden block bg-[var(--background)]"
                 >
                   {isLocalImage(project.image) ? (
                     <Image
@@ -77,8 +77,15 @@ export default function Projects() {
                 </Link>
 
                 {/* Category Type */}
-                <div className="text-project-type text-[13px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)] mb-2">
-                  {project.category}
+                <div className="text-project-type text-[13px] font-medium uppercase tracking-[1.5px] text-[var(--info-text)] mb-2">
+                  <Link
+                    href={`/projects?category=${project.category}`}
+                    className="text-[var(--info-text)] hover:text-[var(--accent)] transition-colors no-underline inline-flex items-center gap-1"
+                    title={`View all ${project.category} projects`}
+                  >
+                    <span>{project.category}</span>
+                    <span className="text-[10px] text-[var(--accent)]">↗</span>
+                  </Link>
                 </div>
 
                 {/* Project Title + Dual Sliding Arrow Link */}
@@ -87,21 +94,21 @@ export default function Projects() {
                   className="link-block-project block no-underline"
                 >
                   <div className="block-project flex justify-between items-center pb-3">
-                    <h5 className="heading-project text-[22px] sm:text-[24px] font-medium text-white tracking-[-0.8px] leading-[120%] m-0 group-hover:text-[var(--accent)] transition-colors">
+                    <h5 className="heading-project text-[22px] sm:text-[24px] font-medium text-[var(--heading)] tracking-[-0.8px] leading-[120%] m-0">
                       {project.title}
                     </h5>
                     <div className="icon-arrow relative w-[10px] h-[10px] overflow-hidden flex items-center justify-center ml-3 shrink-0">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/albion/arrow_4.svg" alt="" className="icon-arrow-a w-[10px] h-[10px] brightness-200" />
+                      <img src="/albion/arrow_4.svg" alt="" className="icon-arrow-a w-[10px] h-[10px]" />
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/albion/arrow_3.svg" alt="" className="icon-arrow-b w-[10px] h-[10px] brightness-200" />
+                      <img src="/albion/arrow_3.svg" alt="" className="icon-arrow-b w-[10px] h-[10px]" />
                     </div>
                   </div>
 
                   {/* Dual Dark Underline */}
                   <div className="line-block relative w-full h-[2px] flex items-center">
-                    <div className="line-full line-full-anim absolute inset-0 bg-[var(--accent)]" />
-                    <div className="line-1px w-full h-[1px] bg-white/15" />
+                    <div className="line-full dark line-full-anim absolute inset-0 bg-[var(--heading)]" />
+                    <div className="line-1px dark w-full h-[1px] bg-[var(--border)]" />
                   </div>
                 </Link>
 

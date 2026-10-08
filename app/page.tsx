@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#07172B]">
+    <main className="min-h-screen bg-white">
       {/* 1. Albion Navigation */}
       <Navbar />
 

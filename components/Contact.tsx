@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Facebook, MapPin, Mail, Phone, ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
@@ -40,7 +41,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="section w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[#08182D] mb-[14px]">
+    <section id="contact" className="section w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-white mb-[14px]">
       <div className="content max-w-[1200px] mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           
@@ -55,10 +56,10 @@ export default function Contact() {
                     Get in Touch
                   </div>
                 </div>
-                <h2 className="heading text-3xl sm:text-4xl lg:text-[50px] leading-[1.08] tracking-[-1.4px] font-medium text-white mb-6 max-w-xl">
+                <h2 className="heading text-3xl sm:text-4xl lg:text-[50px] leading-[1.08] tracking-[-1.4px] font-medium text-[var(--heading)] mb-6 max-w-xl">
                   Let&apos;s build your vision with certainty
                 </h2>
-                <p className="text-[17px] sm:text-[18px] leading-[170%] text-slate-300 max-w-lg m-0">
+                <p className="text-[17px] sm:text-[18px] leading-[170%] text-[var(--paragraphs)] max-w-lg m-0">
                   From structural steel design and feasibility to turnkey civil works, our registered engineers are available to review your specifications and tender requirements.
                 </p>
               </div>
@@ -67,7 +68,11 @@ export default function Contact() {
             {/* Architectural Visual Preview */}
             <Reveal delay={0.15} width="100%">
               <div className="grid grid-cols-2 gap-4">
-                <div className="relative aspect-[16/11] border border-white/10 overflow-hidden group bg-[#0C2340] cursor-pointer">
+                <Link
+                  href="/projects"
+                  className="relative aspect-[16/11] border border-[var(--border)] overflow-hidden group bg-[var(--background)] cursor-pointer block"
+                  title="View Silverline projects"
+                >
                   <Image
                     src="/services/building-construction.jpg"
                     alt="Commercial Engineering Facility"
@@ -76,9 +81,16 @@ export default function Contact() {
                     sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors pointer-events-none" />
-                </div>
-                <div className="relative aspect-[16/11] border border-white/10 overflow-hidden group bg-[#0C2340] cursor-pointer">
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none" />
+                  <div className="absolute bottom-2 left-2 px-2 py-0.5 bg-black/70 text-white text-[10px] uppercase font-bold tracking-wider">
+                    Our Works ↗
+                  </div>
+                </Link>
+                <Link
+                  href="/#capabilities"
+                  className="relative aspect-[16/11] border border-[var(--border)] overflow-hidden group bg-[var(--background)] cursor-pointer block"
+                  title="View Fabrication Plant"
+                >
                   <Image
                     src="/capabilities/fabrication-facility.jpg"
                     alt="Lusaka Fabrication Workshop"
@@ -87,61 +99,64 @@ export default function Contact() {
                     sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors pointer-events-none" />
-                </div>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none" />
+                  <div className="absolute bottom-2 left-2 px-2 py-0.5 bg-black/70 text-white text-[10px] uppercase font-bold tracking-wider">
+                    Fabrication Plant ↗
+                  </div>
+                </Link>
               </div>
             </Reveal>
 
             {/* Architectural Contact Info Cards */}
             <Reveal delay={0.25} width="100%">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-white/10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-[var(--border)]">
                 {/* Location */}
-                <div className="p-6 bg-[#0F2847] border border-white/10 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-center gap-2 mb-2 text-white">
+                <div className="p-6 bg-[var(--background)] border border-[var(--border)] hover:border-[var(--heading)] hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center gap-2 mb-2 text-[var(--heading)]">
                     <MapPin size={18} className="text-[var(--accent)] shrink-0" />
-                    <h3 className="text-[14px] font-semibold uppercase tracking-[1.5px] text-white m-0">
+                    <h3 className="text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)] m-0">
                       Headquarters
                     </h3>
                   </div>
-                  <p className="text-[14px] text-slate-300 leading-relaxed m-0 pl-6">
+                  <p className="text-[14px] text-[var(--paragraphs)] leading-relaxed m-0 pl-6">
                     Plot 10, Buluwe Street, Woodlands, Lusaka, Zambia
                   </p>
                 </div>
 
                 {/* Email */}
-                <div className="p-6 bg-[#0F2847] border border-white/10 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-center gap-2 mb-2 text-white">
+                <div className="p-6 bg-[var(--background)] border border-[var(--border)] hover:border-[var(--heading)] hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center gap-2 mb-2 text-[var(--heading)]">
                     <Mail size={18} className="text-[var(--accent)] shrink-0" />
-                    <h3 className="text-[14px] font-semibold uppercase tracking-[1.5px] text-white m-0">
+                    <h3 className="text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)] m-0">
                       Email Inquiries
                     </h3>
                   </div>
                   <a
                     href="mailto:info@silverlineng.com"
-                    className="text-[14px] text-slate-300 hover:text-[var(--accent)] transition-colors block pl-6 font-medium no-underline"
+                    className="text-[14px] text-[var(--paragraphs)] hover:text-[var(--heading)] transition-colors block pl-6 font-medium no-underline"
                   >
                     info@silverlineng.com
                   </a>
                 </div>
 
                 {/* Direct Calling */}
-                <div className="p-6 bg-[#0F2847] border border-white/10 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-center gap-2 mb-2 text-white">
+                <div className="p-6 bg-[var(--background)] border border-[var(--border)] hover:border-[var(--heading)] hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center gap-2 mb-2 text-[var(--heading)]">
                     <Phone size={18} className="text-[var(--accent)] shrink-0" />
-                    <h3 className="text-[14px] font-semibold uppercase tracking-[1.5px] text-white m-0">
+                    <h3 className="text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)] m-0">
                       Direct Phone
                     </h3>
                   </div>
                   <div className="pl-6 space-y-1">
                     <a
                       href="tel:+260966626579"
-                      className="text-[14px] text-slate-300 hover:text-[var(--accent)] font-medium block no-underline"
+                      className="text-[14px] text-[var(--paragraphs)] hover:text-[var(--heading)] font-medium block no-underline"
                     >
                       +260 966 626579
                     </a>
                     <a
                       href="tel:+260771814040"
-                      className="text-[14px] text-slate-300 hover:text-[var(--accent)] font-medium block no-underline"
+                      className="text-[14px] text-[var(--paragraphs)] hover:text-[var(--heading)] font-medium block no-underline"
                     >
                       +260 771 814040
                     </a>
@@ -149,8 +164,8 @@ export default function Contact() {
                 </div>
 
                 {/* Social Channels */}
-                <div className="p-6 bg-[#0F2847] border border-white/10 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                  <h3 className="text-[14px] font-semibold uppercase tracking-[1.5px] text-white mb-3">
+                <div className="p-6 bg-[var(--background)] border border-[var(--border)] hover:border-[var(--heading)] hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                  <h3 className="text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)] mb-3">
                     Follow Silverline
                   </h3>
                   <div className="flex items-center gap-2.5">
@@ -161,7 +176,7 @@ export default function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={social.name}
-                        className="w-10 h-10 bg-[#08182D] border border-white/10 text-white flex items-center justify-center hover:bg-[var(--accent)] hover:text-[#0C2340] hover:border-[var(--accent)] transition-all duration-200"
+                        className={`w-10 h-10 bg-white border border-[var(--border)] text-[var(--heading)] flex items-center justify-center transition-all duration-200 ${social.hoverStyle}`}
                       >
                         <social.icon size={18} />
                       </a>
@@ -173,19 +188,19 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Architectural Quotation Form */}
-          <div className="bg-[#0F2847] border border-white/10 p-5 sm:p-8 lg:p-12 shadow-2xl">
+          <div className="bg-[var(--background)] border border-[var(--border)] p-5 sm:p-8 lg:p-12 shadow-sm">
             <Reveal width="100%">
               <div className="mb-8">
                 <div className="subtitle flex items-center mb-2">
-                  <div className="line-subtitle w-[27px] h-[1px] bg-[var(--accent)]" />
-                  <div className="text-subtitle ml-3 text-[13px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)]">
+                  <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
+                  <div className="text-subtitle ml-3 text-[13px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
                     Project Consultation
                   </div>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-medium text-white tracking-[-0.8px] mb-3">
+                <h3 className="text-2xl sm:text-3xl font-medium text-[var(--heading)] tracking-[-0.8px] mb-3">
                   Request a Tender or Quotation
                 </h3>
-                <p className="text-[15px] text-slate-300 leading-relaxed m-0">
+                <p className="text-[15px] text-[var(--paragraphs)] leading-relaxed m-0">
                   Fill in your project requirements below. Our engineering estimating team will respond within 24 hours.
                 </p>
               </div>
@@ -193,10 +208,10 @@ export default function Contact() {
 
             {/* Direct WhatsApp Quick Response Bar */}
             <Reveal delay={0.1} width="100%">
-              <div className="mb-8 p-4 sm:p-5 bg-[#08182D] border border-white/10">
+              <div className="mb-8 p-4 sm:p-5 bg-white border border-[var(--border)]">
                 <div className="flex items-center gap-2 mb-3">
-                  <WhatsAppIcon size={16} className="text-emerald-400 shrink-0" />
-                  <span className="text-[12px] font-semibold uppercase tracking-[1.5px] text-white">
+                  <WhatsAppIcon size={16} className="text-emerald-600 shrink-0" />
+                  <span className="text-[12px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
                     Instant WhatsApp Dispatch
                   </span>
                 </div>
@@ -228,7 +243,7 @@ export default function Contact() {
               {/* Inquiry Type Chips */}
               <Reveal delay={0.2} width="100%">
                 <div>
-                  <label className="block text-[13px] font-semibold uppercase tracking-[1.2px] text-[var(--accent)] mb-2.5">
+                  <label className="block text-[13px] font-semibold uppercase tracking-[1.2px] text-[var(--heading)] mb-2.5">
                     Engineering Discipline
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -239,8 +254,8 @@ export default function Contact() {
                         onClick={() => setInquiryType(type)}
                         className={`px-3.5 py-2 text-[12px] font-semibold uppercase tracking-[1px] rounded-none transition-all cursor-pointer ${
                           inquiryType === type
-                            ? "bg-[var(--accent)] text-[#0C2340] border border-[var(--accent)] font-bold shadow-md"
-                            : "bg-[#08182D] text-slate-300 border border-white/10 hover:border-[var(--accent)] hover:text-white"
+                            ? "bg-[var(--heading)] text-white border border-[var(--heading)]"
+                            : "bg-white text-[var(--paragraphs)] border border-[var(--border)] hover:border-[var(--heading)] hover:text-[var(--heading)]"
                         }`}
                       >
                         {type}
@@ -254,25 +269,25 @@ export default function Contact() {
               <Reveal delay={0.25} width="100%">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-slate-300 mb-1.5">
+                    <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
                       First Name *
                     </label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Mwansa"
-                      className="w-full px-4 py-3.5 bg-[#08182D] border border-white/15 text-[16px] sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[var(--accent)] transition-colors rounded-none"
+                      className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
                     />
                   </div>
                   <div>
-                    <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-slate-300 mb-1.5">
+                    <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
                       Last Name *
                     </label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Phiri"
-                      className="w-full px-4 py-3.5 bg-[#08182D] border border-white/15 text-[16px] sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[var(--accent)] transition-colors rounded-none"
+                      className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
                     />
                   </div>
                 </div>
@@ -282,24 +297,24 @@ export default function Contact() {
               <Reveal delay={0.3} width="100%">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-slate-300 mb-1.5">
+                    <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
                       Email Address *
                     </label>
                     <input
                       type="email"
                       required
                       placeholder="name@company.com"
-                      className="w-full px-4 py-3.5 bg-[#08182D] border border-white/15 text-[16px] sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[var(--accent)] transition-colors rounded-none"
+                      className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
                     />
                   </div>
                   <div>
-                    <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-slate-300 mb-1.5">
+                    <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
                       Phone Number
                     </label>
                     <input
                       type="tel"
                       placeholder="+260 9..."
-                      className="w-full px-4 py-3.5 bg-[#08182D] border border-white/15 text-[16px] sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[var(--accent)] transition-colors rounded-none"
+                      className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
                     />
                   </div>
                 </div>
@@ -308,14 +323,14 @@ export default function Contact() {
               {/* Message */}
               <Reveal delay={0.35} width="100%">
                 <div>
-                  <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-slate-300 mb-1.5">
+                  <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
                     Project Scope / Specifications *
                   </label>
                   <textarea
                     rows={4}
                     required
                     placeholder="Describe your site location, structural requirements, timeline, or BOQ details..."
-                    className="w-full px-4 py-3.5 bg-[#08182D] border border-white/15 text-[16px] sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[var(--accent)] transition-colors rounded-none resize-none"
+                    className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none resize-none"
                   ></textarea>
                 </div>
               </Reveal>
@@ -324,7 +339,7 @@ export default function Contact() {
               <Reveal delay={0.4} width="100%">
                 <button
                   type="submit"
-                  className="w-full bg-[var(--accent)] hover:brightness-110 text-[#0C2340] px-8 py-5 text-[14px] font-bold uppercase tracking-[1.5px] flex items-center justify-center gap-2 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-2xl border-0"
+                  className="w-full bg-[var(--accent)] hover:brightness-105 text-[var(--heading)] px-8 py-5 text-[14px] font-semibold uppercase tracking-[1.5px] flex items-center justify-center gap-2 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg border-0"
                 >
                   <span>Submit Inquiry</span>
                   <ArrowUpRight size={16} />
@@ -332,10 +347,9 @@ export default function Contact() {
               </Reveal>
             </form>
           </div>
+
         </div>
       </div>
     </section>
   );
 }
-
-

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-        <main className="min-h-screen bg-[#07172B]">
+        <main className="min-h-screen bg-white">
             <Navbar />
             <div className="pt-24 sm:pt-28"> {/* Account for fixed navbar */}
                 <Contact />
