@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-[100svh] pt-36 sm:pt-44 lg:pt-48 pb-24 sm:pb-28 flex flex-col items-center justify-center overflow-hidden mb-[14px]"
+      className="relative w-full min-h-[100svh] pt-28 sm:pt-32 lg:pt-36 pb-20 sm:pb-24 flex flex-col items-center justify-center overflow-hidden mb-[14px]"
     >
       {/* Background Video with Cinematic Dark Contrast */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
@@ -56,7 +56,7 @@ export default function Hero() {
       </div>
 
       {/* High-Contrast Centered Content */}
-      <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-8 text-center flex flex-col items-center mt-6 sm:mt-10 lg:mt-14 mb-8">
+      <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-8 text-center flex flex-col items-center mt-2 sm:mt-4 lg:mt-6 mb-6">
         
 
         {/* Monumental Clean White Headline */}
