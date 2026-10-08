@@ -11,6 +11,18 @@ export default function Hero() {
   const heroVideo = "/whatsapp-hero-video.mp4";
   const [videoError, setVideoError] = useState(false);
 
+  const scrollToContent = () => {
+    const target =
+      document.getElementById("trust") ||
+      document.getElementById("overview") ||
+      document.getElementById("services");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="hero"
@@ -96,17 +108,22 @@ export default function Hero() {
 
       </div>
 
-      {/* Minimal Bottom Scroll Indicator */}
-      <motion.div
+      {/* Minimal Bottom Scroll Button */}
+      <motion.button
+        type="button"
+        onClick={scrollToContent}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.8 }}
-        className="absolute bottom-8 z-20 flex flex-col items-center !text-white/70 text-[11px] uppercase tracking-[2px]"
+        className="absolute bottom-6 sm:bottom-8 z-20 flex flex-col items-center !text-white/75 hover:!text-white text-[11px] uppercase tracking-[2px] cursor-pointer transition-colors duration-200 bg-transparent border-0 outline-none group focus:outline-none"
         style={{ color: "rgba(255, 255, 255, 0.75)" }}
+        aria-label="Scroll to content"
       >
-        <span className="mb-1 text-[10px] font-semibold tracking-[2px]">Scroll</span>
-        <ChevronDown size={14} className="animate-bounce" />
-      </motion.div>
+        <span className="mb-1 text-[10px] font-semibold tracking-[2px] group-hover:text-[var(--accent)] transition-colors">
+          Scroll
+        </span>
+        <ChevronDown size={14} className="animate-bounce group-hover:text-[var(--accent)] transition-colors" />
+      </motion.button>
     </section>
   );
 }
