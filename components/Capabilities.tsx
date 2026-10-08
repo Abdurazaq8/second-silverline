@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -28,6 +28,24 @@ import WhatsAppIcon from "./WhatsAppIcon";
 export default function Capabilities() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+  const [loadCncVideo, setLoadCncVideo] = useState(false);
+  const cncVideoContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = cncVideoContainerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setLoadCncVideo(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "250px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const togglePlay = () => {
     const video = document.getElementById("cnc-capability-video") as HTMLVideoElement;
@@ -291,16 +309,17 @@ export default function Capabilities() {
             <Reveal delay={0.2} width="100%">
               <div className="space-y-4">
                 
-                {/* Main Video Box */}
-                <div className="relative overflow-hidden aspect-video border border-[var(--border)] bg-black group shadow-sm">
+                {/* Main Video Box with Deferred Lazy Loading */}
+                <div ref={cncVideoContainerRef} className="relative overflow-hidden aspect-video border border-[var(--border)] bg-black group shadow-sm">
                   <video
                     id="cnc-capability-video"
-                    src="/capabilities/cnc-machine.mp4"
+                    src={loadCncVideo ? "/capabilities/cnc-machine.mp4" : undefined}
                     poster="/capabilities/cnc-frame-1.jpg"
-                    autoPlay
+                    autoPlay={loadCncVideo}
                     loop
                     muted
                     playsInline
+                    preload="none"
                     className="w-full h-full object-cover"
                   />
                   

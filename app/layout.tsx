@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barlow, Outfit, Inter, Playfair_Display } from "next/font/google";
+import { Barlow } from "next/font/google";
 import "./globals.css";
 
 const barlow = Barlow({
@@ -7,21 +7,6 @@ const barlow = Barlow({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
-
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
 });
 
 import Script from "next/script";
@@ -129,7 +114,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${barlow.variable} ${inter.variable} ${playfairDisplay.variable} ${outfit.variable} antialiased`}
+        className={`${barlow.variable} antialiased`}
       >
         <Script
           id="json-ld"

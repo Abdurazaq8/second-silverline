@@ -1,15 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
-import { getHeroPosterUrl } from "@/lib/cloudinary";
+import { getHeroPosterUrl, getHeroVideoUrl } from "@/lib/cloudinary";
 
 export default function Hero() {
   const heroPoster = getHeroPosterUrl() || "/construction_hero_modern_site.png";
-  const heroVideo = "/whatsapp-hero-video.mp4";
+  const heroVideo = getHeroVideoUrl() || "/whatsapp-hero-video.mp4";
   const [videoError, setVideoError] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    // Defer heavy video buffering until after initial paint & hydration
+    // Ensures sub-second First Contentful Paint and Largest Contentful Paint
+    const timer = setTimeout(() => {
+      // Respect Save-Data preference if enabled by the user/browser
+      if (typeof navigator !== "undefined" && (navigator as unknown as { connection?: { saveData?: boolean } }).connection?.saveData) {
+        return;
+      }
+      setShouldLoadVideo(true);
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const scrollToContent = () => {
     const target =
@@ -32,23 +47,27 @@ export default function Hero() {
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/85 z-10 pointer-events-none" />
 
+        {/* High-priority poster renders instantly */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={heroPoster}
           alt="Silverline Engineering"
+          // @ts-expect-error fetchpriority attribute
+          fetchpriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        {heroVideo && !videoError && (
+        {shouldLoadVideo && heroVideo && !videoError && (
           <video
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             poster={heroPoster}
             onError={() => setVideoError(true)}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
           >
             <source src={heroVideo} type="video/mp4" />
           </video>
