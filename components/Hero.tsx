@@ -91,10 +91,10 @@ export default function Hero() {
           <Link
             href="/contact"
             className="w-full sm:w-auto bg-[var(--accent)] !text-[var(--heading)] px-8 py-4 text-[13px] font-semibold uppercase tracking-[1.5px] flex items-center justify-center gap-2 !no-underline hover:brightness-105 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 shadow-lg cursor-pointer"
-            style={{ color: "#101b22", backgroundColor: "#fdc23e", textDecoration: "none" }}
+            style={{ color: "#0c2340", backgroundColor: "#f59e0b", textDecoration: "none" }}
           >
-            <span style={{ color: "#101b22" }}>Discuss Project</span>
-            <ArrowUpRight size={16} color="#101b22" />
+            <span style={{ color: "#0c2340" }}>Discuss Project</span>
+            <ArrowUpRight size={16} color="#0c2340" />
           </Link>
 
           <Link

@@ -2,31 +2,33 @@
 @import "./albion.css";
 
 @theme {
-  --color-primary: #101b22;
+  --color-primary: #0c2340;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #fdc23e;
-  --color-secondary-foreground: #101b22;
-  --color-accent: #fdc23e;
-  --color-heading: #101b22;
-  --color-paragraphs: #535c62;
-  --color-background-soft: #f0f6f8;
-  --color-paragraphs-dark: #95a3b2;
-  --color-info-text: #778697;
-  --color-border-subtle: rgba(16, 27, 34, 0.2);
+  --color-secondary: #f59e0b;
+  --color-secondary-foreground: #0c2340;
+  --color-accent: #f59e0b;
+  --color-cobalt: #2563eb;
+  --color-heading: #0c2340;
+  --color-paragraphs: #334155;
+  --color-background-soft: #eaf2f9;
+  --color-paragraphs-dark: #64748b;
+  --color-info-text: #475569;
+  --color-border-subtle: rgba(12, 35, 64, 0.16);
 
   --animate-spin-slow: spin 10s linear infinite;
   --animate-bounce-slow: bounce 3s infinite;
 }
 
 :root {
-  --paragraphs: #535c62;
-  --heading: #101b22;
-  --accent: #fdc23e;
-  --background: #f0f6f8;
+  --paragraphs: #334155;
+  --heading: #0c2340;
+  --accent: #f59e0b;
+  --cobalt: #2563eb;
+  --background: #eaf2f9;
   --white: #ffffff;
-  --paragraphs-dark: #95a3b2;
-  --info-text: #778697;
-  --border: rgba(16, 27, 34, 0.2);
+  --paragraphs-dark: #64748b;
+  --info-text: #475569;
+  --border: rgba(12, 35, 64, 0.16);
 }
 
 html {

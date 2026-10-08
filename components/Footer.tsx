@@ -7,11 +7,11 @@ import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function Footer() {
   return (
-    <footer className="section-footer w-full bg-[#101b22] text-white pt-16 sm:pt-24 pb-12 sm:pb-14 px-4 sm:px-8 lg:px-12 mt-auto border-t border-[#1a2b36] font-[family-name:var(--font-barlow)]">
+    <footer className="section-footer w-full bg-[#0c2340] text-white pt-16 sm:pt-24 pb-12 sm:pb-14 px-4 sm:px-8 lg:px-12 mt-auto border-t border-[#163559] font-[family-name:var(--font-barlow)]">
       <div className="content max-w-[1200px] mx-auto w-full">
         
         {/* 4-Columns Grid Footer */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2.5fr_1.1fr_1.2fr_1.3fr] gap-10 lg:gap-10 pb-12 sm:pb-16 border-b border-[#2e404b]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2.5fr_1.1fr_1.2fr_1.3fr] gap-10 lg:gap-10 pb-12 sm:pb-16 border-b border-[#1c4068]">
           
           {/* Column 1: Brand Logo & Company Profile */}
           <div className="flex flex-col items-start pr-0 lg:pr-8">
@@ -27,18 +27,18 @@ export default function Footer() {
                 <span className="text-[21px] font-bold tracking-tight text-white">
                   SILVERLINE
                 </span>
-                <span className="text-[10px] font-semibold tracking-[0.24em] uppercase text-[#fdc23e] mt-1">
+                <span className="text-[10px] font-semibold tracking-[0.24em] uppercase text-[#f59e0b] mt-1">
                   ENGINEERING
                 </span>
               </div>
             </Link>
 
-            <p className="paragraph-footer text-[15px] sm:text-[16px] leading-[170%] text-[#95a3b2] mb-6 max-w-[340px]">
+            <p className="paragraph-footer text-[15px] sm:text-[16px] leading-[170%] text-[#94a3b8] mb-6 max-w-[340px]">
               A leading Zambian-owned multi-disciplinary engineering contractor delivering civil infrastructure, heavy structural steel fabrication, pre-engineered buildings, and turnkey developments.
             </p>
 
-            <div className="flex items-start gap-2.5 text-[14px] text-[#95a3b2] leading-relaxed">
-              <MapPin size={16} className="text-[#fdc23e] mt-1 shrink-0" />
+            <div className="flex items-start gap-2.5 text-[14px] text-[#94a3b8] leading-relaxed">
+              <MapPin size={16} className="text-[#f59e0b] mt-1 shrink-0" />
               <span>Plot 10, Buluwe Street, Woodlands, Lusaka, Zambia</span>
             </div>
           </div>
@@ -102,21 +102,21 @@ export default function Footer() {
             <div className="heading-footer text-white text-[13px] font-semibold uppercase tracking-[1.5px] mb-6">
               Head Office
             </div>
-            <div className="flex flex-col space-y-3.5 text-[15px] text-[#95a3b2]">
-              <a href="tel:+260966626579" className="flex items-center gap-2.5 text-[#95a3b2] hover:text-white transition-colors no-underline">
-                <Phone size={15} className="text-[#fdc23e] shrink-0" />
+            <div className="flex flex-col space-y-3.5 text-[15px] text-[#94a3b8]">
+              <a href="tel:+260966626579" className="flex items-center gap-2.5 text-[#94a3b8] hover:text-white transition-colors no-underline">
+                <Phone size={15} className="text-[#f59e0b] shrink-0" />
                 <span>+260 966 626579</span>
               </a>
-              <a href="tel:+260771814040" className="flex items-center gap-2.5 text-[#95a3b2] hover:text-white transition-colors no-underline">
-                <Phone size={15} className="text-[#fdc23e] shrink-0" />
+              <a href="tel:+260771814040" className="flex items-center gap-2.5 text-[#94a3b8] hover:text-white transition-colors no-underline">
+                <Phone size={15} className="text-[#f59e0b] shrink-0" />
                 <span>+260 771 814040</span>
               </a>
-              <a href="mailto:info@silverlineng.com" className="flex items-center gap-2.5 text-[#95a3b2] hover:text-white transition-colors no-underline">
-                <Mail size={15} className="text-[#fdc23e] shrink-0" />
+              <a href="mailto:info@silverlineng.com" className="flex items-center gap-2.5 text-[#94a3b8] hover:text-white transition-colors no-underline">
+                <Mail size={15} className="text-[#f59e0b] shrink-0" />
                 <span>info@silverlineng.com</span>
               </a>
 
-              <div className="pt-3 border-t border-white/10 text-[13px] text-[#95a3b2] leading-relaxed">
+              <div className="pt-3 border-t border-white/10 text-[13px] text-[#94a3b8] leading-relaxed">
                 <div className="font-semibold text-white/90 uppercase tracking-wider text-[11px] mb-1">
                   Operating Hours
                 </div>
@@ -130,7 +130,7 @@ export default function Footer() {
 
         {/* Footer Bottom Bar */}
         <div className="footer-down-block flex flex-col sm:flex-row justify-between items-center pt-8 gap-5">
-          <div className="text-footer-down text-[14px] text-[#95a3b2] text-center sm:text-left">
+          <div className="text-footer-down text-[14px] text-[#94a3b8] text-center sm:text-left">
             © {new Date().getFullYear()} Silverline Engineering Limited. All rights reserved.
           </div>
 
@@ -139,7 +139,7 @@ export default function Footer() {
               href="https://wa.me/260966626579"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 border border-white/10 bg-white/5 hover:bg-[#fdc23e] hover:border-[#fdc23e] text-white hover:text-[#101b22] flex items-center justify-center transition-all duration-200"
+              className="w-10 h-10 border border-white/10 bg-white/5 hover:bg-[#f59e0b] hover:border-[#f59e0b] text-white hover:text-[#0c2340] flex items-center justify-center transition-all duration-200"
               aria-label="WhatsApp"
             >
               <WhatsAppIcon size={16} />
@@ -148,7 +148,7 @@ export default function Footer() {
               href="https://www.facebook.com/share/1KntzJukRd/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 border border-white/10 bg-white/5 hover:bg-[#fdc23e] hover:border-[#fdc23e] text-white hover:text-[#101b22] flex items-center justify-center transition-all duration-200"
+              className="w-10 h-10 border border-white/10 bg-white/5 hover:bg-[#f59e0b] hover:border-[#f59e0b] text-white hover:text-[#0c2340] flex items-center justify-center transition-all duration-200"
               aria-label="Facebook"
             >
               <Facebook size={16} />
@@ -157,7 +157,7 @@ export default function Footer() {
               href="https://www.instagram.com/silverline.eng_limited?stkn=aGtib2tuc2hvNW5w"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 border border-white/10 bg-white/5 hover:bg-[#fdc23e] hover:border-[#fdc23e] text-white hover:text-[#101b22] flex items-center justify-center transition-all duration-200"
+              className="w-10 h-10 border border-white/10 bg-white/5 hover:bg-[#f59e0b] hover:border-[#f59e0b] text-white hover:text-[#0c2340] flex items-center justify-center transition-all duration-200"
               aria-label="Instagram"
             >
               <Instagram size={16} />
@@ -166,7 +166,7 @@ export default function Footer() {
               href="https://www.linkedin.com/company/silverline-engineering-limited"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 border border-white/10 bg-white/5 hover:bg-[#fdc23e] hover:border-[#fdc23e] text-white hover:text-[#101b22] flex items-center justify-center transition-all duration-200"
+              className="w-10 h-10 border border-white/10 bg-white/5 hover:bg-[#f59e0b] hover:border-[#f59e0b] text-white hover:text-[#0c2340] flex items-center justify-center transition-all duration-200"
               aria-label="LinkedIn"
             >
               <Linkedin size={16} />

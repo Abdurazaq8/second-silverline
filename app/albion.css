@@ -1,12 +1,13 @@
 :root {
-  --paragraphs: #535c62;
-  --heading: #101b22;
-  --accent: #fdc23e;
-  --background: #f0f6f8;
+  --paragraphs: #334155;
+  --heading: #0c2340;
+  --accent: #f59e0b;
+  --cobalt: #2563eb;
+  --background: #eaf2f9;
   --white: white;
-  --paragraphs-dark: #95a3b2;
-  --info-text: #778697;
-  --border: rgba(16, 27, 34, .2);
+  --paragraphs-dark: #64748b;
+  --info-text: #475569;
+  --border: rgba(12, 35, 64, .16);
 }
 
 .w-layout-grid {

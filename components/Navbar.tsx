@@ -60,10 +60,10 @@ export default function Navbar() {
             priority
           />
           <div className="flex flex-col leading-none">
-            <span className="text-[17px] font-bold tracking-tight text-[var(--heading)]" style={{ color: "#101b22" }}>
+            <span className="text-[17px] font-bold tracking-tight text-[var(--heading)]" style={{ color: "#0c2340" }}>
               SILVERLINE
             </span>
-            <span className="text-[9px] font-semibold tracking-[0.25em] uppercase text-[var(--paragraphs-dark)] mt-0.5" style={{ color: "#95a3b2" }}>
+            <span className="text-[9px] font-semibold tracking-[0.25em] uppercase text-[var(--paragraphs-dark)] mt-0.5" style={{ color: "#64748b" }}>
               ENGINEERING
             </span>
           </div>
@@ -95,10 +95,10 @@ export default function Navbar() {
           <Link
             href="/contact"
             className="bg-[var(--accent)] !text-[var(--heading)] px-6 py-2.5 text-[13px] font-semibold uppercase tracking-[1.5px] flex items-center gap-1.5 !no-underline hover:opacity-90 transition-opacity shadow-sm"
-            style={{ color: "#101b22", backgroundColor: "#fdc23e", textDecoration: "none" }}
+            style={{ color: "#0c2340", backgroundColor: "#f59e0b", textDecoration: "none" }}
           >
-            <span style={{ color: "#101b22" }}>Contact</span>
-            <ArrowUpRight size={15} color="#101b22" />
+            <span style={{ color: "#0c2340" }}>Contact</span>
+            <ArrowUpRight size={15} color="#0c2340" />
           </Link>
         </div>
 
@@ -130,7 +130,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className="text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)] px-3 py-3 border-b border-[var(--border)] border-l-4 border-l-transparent hover:border-l-[var(--accent)] hover:bg-[var(--accent)]/15 transition-all duration-200 !no-underline flex items-center justify-between group"
-                style={{ textDecoration: "none", color: "#101b22" }}
+                style={{ textDecoration: "none", color: "#0c2340" }}
                 onClick={() => setIsOpen(false)}
               >
                 <span className="group-hover:text-[var(--heading)]">{item.name}</span>
@@ -141,11 +141,11 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 className="w-full bg-[var(--accent)] !text-[var(--heading)] py-3.5 text-[13px] font-semibold uppercase tracking-[1.5px] flex items-center justify-center gap-2 !no-underline shadow-sm"
-                style={{ textDecoration: "none", color: "#101b22", backgroundColor: "#fdc23e" }}
+                style={{ textDecoration: "none", color: "#0c2340", backgroundColor: "#f59e0b" }}
                 onClick={() => setIsOpen(false)}
               >
-                <span style={{ color: "#101b22" }}>Get in Touch</span>
-                <ArrowUpRight size={16} color="#101b22" />
+                <span style={{ color: "#0c2340" }}>Get in Touch</span>
+                <ArrowUpRight size={16} color="#0c2340" />
               </Link>
             </div>
           </div>
