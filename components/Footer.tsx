@@ -49,11 +49,11 @@ export default function Footer() {
               Navigation
             </div>
             <div className="flex flex-col space-y-1">
-              <Link href="/#about" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                About Us
-              </Link>
               <Link href="/#services" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
                 Services
+              </Link>
+              <Link href="/#projects" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
+                Projects
               </Link>
               <Link href="/#capabilities" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
                 Capabilities
@@ -61,8 +61,8 @@ export default function Footer() {
               <Link href="/#process" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
                 How We Work
               </Link>
-              <Link href="/projects" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
-                Portfolio
+              <Link href="/#about" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
+                About Us
               </Link>
               <Link href="/contact" className="link-footer text-[16px] text-[#95a3b2] hover:text-white hover:translate-x-1.5 transition-all no-underline">
                 Contact
