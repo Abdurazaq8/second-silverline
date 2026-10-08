@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AlbionStatsWhoWeAre() {
   return (
-    <div id="about" className="section background w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[var(--background)] mb-[14px]">
+    <div id="overview" className="section background w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[var(--background)] mb-[14px]">
       <div className="content max-w-[1200px] mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           

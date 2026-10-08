@@ -2,15 +2,14 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import AlbionStatsWhoWeAre from "@/components/AlbionStatsWhoWeAre";
-import AlbionWhyUs from "@/components/AlbionWhyUs";
-import AlbionWhatWeDoBanner from "@/components/AlbionWhatWeDoBanner";
 import Services from "@/components/Services";
+import Projects from "@/components/Projects";
 import Capabilities from "@/components/Capabilities";
 import Process from "@/components/Process";
-import Projects from "@/components/Projects";
-import AlbionGalleryStrip from "@/components/AlbionGalleryStrip";
-import About from "@/components/About";
+import AlbionWhyUs from "@/components/AlbionWhyUs";
 import Testimonials from "@/components/Testimonials";
+import About from "@/components/About";
+import AlbionGalleryStrip from "@/components/AlbionGalleryStrip";
 import AlbionBannerCTA from "@/components/AlbionBannerCTA";
 import Footer from "@/components/Footer";
 
@@ -20,46 +19,43 @@ export default function Home() {
       {/* 1. Albion Navigation */}
       <Navbar />
 
-      {/* 2. Albion Hero with Looping Video & 3-Column Service Links */}
+      {/* 2. Hero with Looping Video & Quick CTAs */}
       <Hero />
 
-      {/* 3. Accreditations & Infinite Client Ticker */}
+      {/* 3. Compact Statutory Accreditations & Client Trust Strip */}
       <TrustStrip />
 
-      {/* 4. Albion Signature 2x2 Stats & Who We Are */}
+      {/* 4. Albion Signature 2x2 Stats & Who We Are Overview */}
       <AlbionStatsWhoWeAre />
 
-      {/* 5. Albion Signature Why Us with Overlapping Architectural Images */}
-      <AlbionWhyUs />
-
-      {/* 6. Albion Full-Bleed 50/50 Split Banner: What We Do */}
-      <AlbionWhatWeDoBanner />
-
-      {/* 7. All 12 Core Services with Photos & Prefab Video Player */}
+      {/* 5. Core Services: All 12 Engineering Disciplines & Prefab Video */}
       <Services />
 
-      {/* 8. Full Capabilities: 4 Cards, CNC Video Player, Workshop Bays, Workforce & Compliance */}
-      <Capabilities />
-
-      {/* 9. How We Work 4-Step Engineering Workflow */}
-      <Process />
-
-      {/* 10. Featured Landmark Projects with Dual Sliding Arrows */}
+      {/* 6. Featured Landmark Projects: Proven Turnkey Execution */}
       <Projects />
 
-      {/* 11. Full-Bleed 3-Image Construction Gallery Strip */}
-      <AlbionGalleryStrip />
+      {/* 7. Engineering & Manufacturing Capabilities: 2,500m² Plant, CNC & Fleet */}
+      <Capabilities />
 
-      {/* 12. About Company: Mission, Core Values, Stats & Health & Safety Commitment */}
-      <About />
+      {/* 8. How We Work: 4-Step Engineering Delivery */}
+      <Process />
 
-      {/* 13. All 4 Real Client Testimonials (Napoli, Eco Petroleum, Oryx, UNDP) */}
+      {/* 9. Albion Why Us: Engineering Rigor & Quality Standards */}
+      <AlbionWhyUs />
+
+      {/* 10. Client Social Proof & Testimonials: Napoli, Eco Petroleum, Oryx, UNDP */}
       <Testimonials />
 
-      {/* 14. Albion Signature Split Banner: Ready to Work Together */}
+      {/* 11. About Company: Heritage, Values & Zero-Harm Safety Protocol */}
+      <About />
+
+      {/* 12. Architectural Site Gallery Strip */}
+      <AlbionGalleryStrip />
+
+      {/* 13. Albion Full-Bleed Call to Action Banner */}
       <AlbionBannerCTA />
 
-      {/* 15. Albion 4-Column Footer with Contacts & Accreditation */}
+      {/* 14. Comprehensive 4-Column Footer */}
       <Footer />
     </main>
   );
