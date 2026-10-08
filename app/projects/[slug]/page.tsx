@@ -104,7 +104,6 @@ export default async function ProjectPage({ params }: Props) {
             <Link
               href="/projects"
               className="button bg-[var(--accent)] text-[var(--heading)] px-7 py-4 text-[13px] font-semibold uppercase tracking-[1.5px] rounded-none inline-flex items-center justify-center gap-2 no-underline hover:opacity-90 transition-opacity w-full sm:w-auto shrink-0 shadow-sm"
-              style={{ color: "#101b22", backgroundColor: "#fdc23e" }}
             >
               <ArrowLeft size={15} />
               <span>All Projects</span>

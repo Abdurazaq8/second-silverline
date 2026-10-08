@@ -166,8 +166,8 @@ export default function Capabilities() {
         <div className="block-heading flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="block-heading-text">
             <div className="subtitle flex items-center mb-3">
-              <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
-              <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
+              <div className="line-subtitle w-[27px] h-[1px] bg-[var(--accent)]" />
+              <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)]">
                 Our Capabilities
               </div>
             </div>
@@ -405,8 +405,8 @@ export default function Capabilities() {
           <div className="bg-[var(--background)] p-8 sm:p-10 border border-[var(--border)] flex flex-col justify-between">
             <div>
               <div className="subtitle flex items-center mb-3">
-                <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
-                <div className="text-subtitle ml-3 text-[13px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
+                <div className="line-subtitle w-[27px] h-[1px] bg-[var(--accent)]" />
+                <div className="text-subtitle ml-3 text-[13px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)]">
                   Accredited Operations
                 </div>
               </div>

@@ -50,8 +50,8 @@ export default function Contact() {
             <Reveal width="100%">
               <div>
                 <div className="subtitle flex items-center mb-3">
-                  <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
-                  <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
+                  <div className="line-subtitle w-[27px] h-[1px] bg-[var(--accent)]" />
+                  <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)]">
                     Get in Touch
                   </div>
                 </div>

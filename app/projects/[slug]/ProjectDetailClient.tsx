@@ -291,8 +291,7 @@ export default function ProjectDetailClient({ project }: { project: ProjectItem 
               <div className="space-y-3 pt-2">
                 <Link
                   href="/contact"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-[var(--heading)] hover:bg-black text-white font-semibold text-[13px] uppercase tracking-[1.5px] rounded-none transition-colors no-underline shadow-sm"
-                  style={{ color: "#ffffff", backgroundColor: "#101b22", textDecoration: "none" }}
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-[var(--heading)] hover:bg-[#061426] text-white font-semibold text-[13px] uppercase tracking-[1.5px] rounded-none transition-colors no-underline shadow-sm"
                 >
                   <span>Request Technical Proposal</span>
                   <ArrowUpRight size={15} />
@@ -300,7 +299,6 @@ export default function ProjectDetailClient({ project }: { project: ProjectItem 
                 <a
                   href="tel:+260966626579"
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-[var(--heading)] hover:bg-[var(--background)] font-semibold text-[13px] uppercase tracking-[1.5px] rounded-none transition-colors border border-black/10 no-underline shadow-sm"
-                  style={{ color: "#101b22", textDecoration: "none" }}
                 >
                   <Phone size={14} />
                   <span>Call: +260 966 626579</span>

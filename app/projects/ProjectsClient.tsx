@@ -30,13 +30,13 @@ export default function ProjectsClient() {
       <Navbar />
 
       {/* Portfolio Hero with Background Video & Cinematic Color Overlay */}
-      <section className="relative w-full pt-32 sm:pt-40 pb-16 sm:pb-24 px-4 sm:px-8 lg:px-12 overflow-hidden mb-[14px] bg-[#101b22]">
+      <section className="relative w-full pt-32 sm:pt-40 pb-16 sm:pb-24 px-4 sm:px-8 lg:px-12 overflow-hidden mb-[14px] bg-[#0C2340]">
         
         {/* Background Video & Cinematic Color Overlay */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           {/* Dual Color Overlays for Rich Contrast & Readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#101b22]/90 via-[#101b22]/80 to-[#101b22]/95 z-10 pointer-events-none" />
-          <div className="absolute inset-0 bg-[#101b22]/35 z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0C2340]/90 via-[#0C2340]/80 to-[#0C2340]/95 z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-[#0C2340]/35 z-10 pointer-events-none" />
 
           {/* Fallback Poster Image */}
           {/* eslint-disable-next-line @next/next/no-img-element */}

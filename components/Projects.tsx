@@ -20,8 +20,8 @@ export default function Projects() {
         <div className="block-heading flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="block-heading-text">
             <div className="subtitle flex items-center mb-3">
-              <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
-              <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
+              <div className="line-subtitle w-[27px] h-[1px] bg-[var(--accent)]" />
+              <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)]">
                 Featured Projects
               </div>
             </div>

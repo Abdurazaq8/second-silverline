@@ -12,8 +12,8 @@ export default function AlbionWhyUs() {
           {/* Left Block */}
           <div className="block-left flex flex-col items-start w-full">
             <div className="subtitle flex items-center mb-3">
-              <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
-              <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
+              <div className="line-subtitle w-[27px] h-[1px] bg-[var(--accent)]" />
+              <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)]">
                 Why us?
               </div>
             </div>

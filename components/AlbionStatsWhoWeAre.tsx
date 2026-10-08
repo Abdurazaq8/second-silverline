@@ -12,13 +12,13 @@ export default function AlbionStatsWhoWeAre() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 order-2 lg:order-1">
             
             {/* Stat 1 */}
-            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
+            <div className="stats bg-white border border-[var(--border)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
+              <div className="icon-stats-block bg-[var(--background)] group-hover:bg-[var(--accent)] transition-colors p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/albion/icon_1.svg" alt="" className="w-6 h-6" />
               </div>
               <div className="stats-block">
-                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] tracking-tight leading-none mb-3">
+                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] group-hover:text-[var(--cobalt)] transition-colors tracking-tight leading-none mb-3">
                   2,500m²
                 </div>
                 <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-[var(--heading)] leading-[130%] m-0">
@@ -28,13 +28,13 @@ export default function AlbionStatsWhoWeAre() {
             </div>
 
             {/* Stat 2 */}
-            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
+            <div className="stats bg-white border border-[var(--border)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
+              <div className="icon-stats-block bg-[var(--background)] group-hover:bg-[var(--accent)] transition-colors p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/albion/icon_2.svg" alt="" className="w-6 h-6" />
               </div>
               <div className="stats-block">
-                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] tracking-tight leading-none mb-3">
+                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] group-hover:text-[var(--cobalt)] transition-colors tracking-tight leading-none mb-3">
                   12+
                 </div>
                 <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-[var(--heading)] leading-[130%] m-0">
@@ -44,13 +44,13 @@ export default function AlbionStatsWhoWeAre() {
             </div>
 
             {/* Stat 3 */}
-            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
+            <div className="stats bg-white border border-[var(--border)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
+              <div className="icon-stats-block bg-[var(--background)] group-hover:bg-[var(--accent)] transition-colors p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/albion/icon_7.svg" alt="" className="w-6 h-6" />
               </div>
               <div className="stats-block">
-                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] tracking-tight leading-none mb-3">
+                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] group-hover:text-[var(--cobalt)] transition-colors tracking-tight leading-none mb-3">
                   100%
                 </div>
                 <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-[var(--heading)] leading-[130%] m-0">
@@ -60,13 +60,13 @@ export default function AlbionStatsWhoWeAre() {
             </div>
 
             {/* Stat 4 */}
-            <div className="stats bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
+            <div className="stats bg-white border border-[var(--border)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
+              <div className="icon-stats-block bg-[var(--background)] group-hover:bg-[var(--accent)] transition-colors p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/albion/icon_4.svg" alt="" className="w-6 h-6" />
               </div>
               <div className="stats-block">
-                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] tracking-tight leading-none mb-3">
+                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] group-hover:text-[var(--cobalt)] transition-colors tracking-tight leading-none mb-3">
                   15+
                 </div>
                 <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-[var(--heading)] leading-[130%] m-0">
@@ -80,8 +80,8 @@ export default function AlbionStatsWhoWeAre() {
           {/* Right Side (Desktop) / Top Side (Mobile): Who We Are Block */}
           <div className="block-right flex flex-col items-start order-1 lg:order-2 w-full">
             <div className="subtitle flex items-center mb-3">
-              <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
-              <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
+              <div className="line-subtitle w-[27px] h-[1px] bg-[var(--accent)]" />
+              <div className="text-subtitle ml-3 text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)]">
                 Who We Are
               </div>
             </div>
