@@ -12,64 +12,64 @@ export default function AlbionStatsWhoWeAre() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 order-2 lg:order-1">
             
             {/* Stat 1 */}
-            <div className="stats bg-white border border-[var(--border)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] group-hover:bg-[var(--accent)] transition-colors p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
+            <div className="stats bg-[#0c2340] border border-white/10 hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-lg cursor-pointer group">
+              <div className="icon-stats-block bg-[var(--accent)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/albion/icon_1.svg" alt="" className="w-6 h-6" />
               </div>
               <div className="stats-block">
-                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] group-hover:text-[var(--cobalt)] transition-colors tracking-tight leading-none mb-3">
-                  2,500m²
+                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--accent)] tracking-tight leading-none mb-3">
+                  5,000m²
                 </div>
-                <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-[var(--heading)] leading-[130%] m-0">
-                  Heavy fabrication &amp; manufacturing plant in Lusaka
+                <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-slate-100 leading-[130%] m-0">
+                  Heavy fabrication &amp; manufacturing facility in Lusaka
                 </h6>
               </div>
             </div>
 
             {/* Stat 2 */}
-            <div className="stats bg-white border border-[var(--border)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] group-hover:bg-[var(--accent)] transition-colors p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
+            <div className="stats bg-[#0c2340] border border-white/10 hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-lg cursor-pointer group">
+              <div className="icon-stats-block bg-[var(--accent)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/albion/icon_2.svg" alt="" className="w-6 h-6" />
               </div>
               <div className="stats-block">
-                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] group-hover:text-[var(--cobalt)] transition-colors tracking-tight leading-none mb-3">
-                  12+
+                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--accent)] tracking-tight leading-none mb-3">
+                  15+
                 </div>
-                <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-[var(--heading)] leading-[130%] m-0">
-                  Core engineering disciplines &amp; equipment fleet
+                <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-slate-100 leading-[130%] m-0">
+                  Landmark engineering &amp; infrastructure projects completed
                 </h6>
               </div>
             </div>
 
             {/* Stat 3 */}
-            <div className="stats bg-white border border-[var(--border)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] group-hover:bg-[var(--accent)] transition-colors p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
+            <div className="stats bg-[#0c2340] border border-white/10 hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-lg cursor-pointer group">
+              <div className="icon-stats-block bg-[var(--accent)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/albion/icon_7.svg" alt="" className="w-6 h-6" />
               </div>
               <div className="stats-block">
-                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] group-hover:text-[var(--cobalt)] transition-colors tracking-tight leading-none mb-3">
+                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--accent)] tracking-tight leading-none mb-3">
                   100%
                 </div>
-                <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-[var(--heading)] leading-[130%] m-0">
-                  Statutory compliance (ZRA, NAPSA, Workers&apos; Comp)
+                <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-slate-100 leading-[130%] m-0">
+                  Statutory compliance (NCC Grade 1, ZRA, NAPSA, ISO)
                 </h6>
               </div>
             </div>
 
             {/* Stat 4 */}
-            <div className="stats bg-white border border-[var(--border)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-sm cursor-pointer group">
-              <div className="icon-stats-block bg-[var(--background)] group-hover:bg-[var(--accent)] transition-colors p-3 mb-6 sm:mb-8 ml-auto inline-block self-end">
+            <div className="stats bg-[#0c2340] border border-white/10 hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-lg cursor-pointer group">
+              <div className="icon-stats-block bg-[var(--accent)] p-3 mb-6 sm:mb-8 ml-auto inline-block self-end shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/albion/icon_4.svg" alt="" className="w-6 h-6" />
               </div>
               <div className="stats-block">
-                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--heading)] group-hover:text-[var(--cobalt)] transition-colors tracking-tight leading-none mb-3">
-                  15+
+                <div className="numbers-stats text-3xl sm:text-4xl lg:text-[52px] font-medium text-[var(--accent)] tracking-tight leading-none mb-3">
+                  5+
                 </div>
-                <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-[var(--heading)] leading-[130%] m-0">
+                <h6 className="heading-stats text-[15px] sm:text-[17px] font-medium text-slate-100 leading-[130%] m-0">
                   Years delivering landmark infrastructure in Zambia
                 </h6>
               </div>

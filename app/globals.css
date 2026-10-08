@@ -128,14 +128,24 @@ body {
 
 /* Universal Section Card Hover Effects */
 .stats {
+  background-color: var(--heading);
+  border-color: rgba(255, 255, 255, 0.12);
   transition: transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.35s ease, border-color 0.35s ease;
 }
 .stats:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 45px -12px rgba(16, 27, 34, 0.12);
+  box-shadow: 0 24px 50px -12px rgba(12, 35, 64, 0.45);
   border-left: 4px solid var(--accent);
+  border-color: var(--accent);
+}
+.stats .numbers-stats {
+  color: var(--accent);
+}
+.stats .heading-stats {
+  color: #f1f5f9;
 }
 .icon-stats-block {
+  background-color: var(--accent);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .stats:hover .icon-stats-block {

@@ -52,10 +52,10 @@ export default function Capabilities() {
 
   const capabilityCards = [
     {
-      value: "2,500m²",
+      value: "5,000m²",
       title: "Fabrication Facility",
       badge: "Heavy Structural",
-      description: "High-capacity Lusaka facility equipped with overhead cranes and automated tooling for large-scale steel manufacturing.",
+      description: "High-capacity 5,000m² Lusaka facility equipped with overhead cranes and automated tooling for large-scale steel manufacturing.",
       image: "/capabilities/fabrication-facility.jpg",
       icon: Factory,
       href: "/projects/alix-investment-factory",
@@ -94,7 +94,7 @@ export default function Capabilities() {
   ];
 
   const fabricationFeatures = [
-    "2,500m² heavy steel fabrication facility",
+    "5,000m² heavy steel fabrication facility",
     "2,000m² production line of pre-fabricated units",
     "Automated CNC machinery for precision fabrication",
     "High-definition plasma cutting systems",
@@ -264,10 +264,10 @@ export default function Capabilities() {
                     </div>
                   </div>
                   <h3 className="text-3xl sm:text-4xl font-medium text-[var(--heading)] tracking-[-1px] mb-3">
-                    2,500m² Lusaka Fabrication Plant
+                    5,000m² Lusaka Fabrication Plant
                   </h3>
                   <p className="text-[16px] text-[var(--paragraphs)] leading-relaxed m-0">
-                    Our high-capacity facility located in Lusaka is engineered to support large-scale structural steel manufacturing, automated plasma cutting, and complex pre-engineered building systems.
+                    Our high-capacity 5,000m² facility located in Lusaka is engineered to support large-scale structural steel manufacturing, automated plasma cutting, and complex pre-engineered building systems.
                   </p>
                 </div>
 

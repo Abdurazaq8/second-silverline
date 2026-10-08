@@ -95,11 +95,11 @@ export default function ProjectsClient() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 pt-8 sm:pt-10 border-t border-white/20">
             {[
               {
-                value: rawProjects.filter((p) => p.status === "complete").length,
+                value: 15,
                 suffix: "+",
                 label: "Completed Projects",
               },
-              { value: 15, suffix: "+", label: "Years Experience" },
+              { value: 5, suffix: "+", label: "Years Experience" },
               { value: 8, suffix: "", label: "Engineering Disciplines" },
               { value: 100, suffix: "%", label: "Statutory Compliance" },
             ].map((stat, idx) => (

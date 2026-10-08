@@ -25,7 +25,7 @@ export default function AlbionWhyUs() {
             <p className="paragraph text-[15px] sm:text-[18px] leading-[170%] text-[var(--paragraphs)] max-w-[500px] mb-8 w-full">
               From structural analysis and feasibility to on-site assembly, our registered structural and civil engineers maintain rigorous engineering discipline, statutory safety protocols, and execution certainty.
               <br /><br />
-              Backed by our 2,500m² Lusaka fabrication plant, high-capacity earthmoving fleet, and certified artisans, we guarantee turnkey delivery and tender compliance for mining, commercial, and government partners.
+              Backed by our 5,000m² Lusaka fabrication plant, high-capacity earthmoving fleet, and certified artisans, we guarantee turnkey delivery and tender compliance for mining, commercial, and government partners.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">

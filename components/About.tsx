@@ -4,10 +4,10 @@ import { Award, Users, Briefcase, Clock, ShieldCheck, HardHat, FileCheck, AlertT
 import { Reveal } from "./Reveal";
 
 const stats = [
-  { icon: Clock, label: "Years Experience", value: "15+" },
-  { icon: Briefcase, label: "Projects Completed", value: "40+" },
+  { icon: Clock, label: "Years Experience", value: "5+" },
+  { icon: Briefcase, label: "Projects Completed", value: "15+" },
+  { icon: Award, label: "Fabrication Facility", value: "5,000m²" },
   { icon: Users, label: "Qualified Artisans", value: "50+" },
-  { icon: Award, label: "Industry Awards", value: "5+" },
 ];
 
 const safetyPoints = [
@@ -78,15 +78,15 @@ export default function About() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-20">
           {stats.map((stat, index) => (
             <Reveal key={index} delay={index * 0.1} width="100%">
-              <div className="bg-white border border-[var(--border)] p-5 sm:p-8 flex flex-col justify-between stats group cursor-pointer h-full">
-                <div className="icon-stats-block bg-[var(--background)] p-2.5 sm:p-3.5 mb-4 sm:mb-6 ml-auto inline-block self-end transition-colors group-hover:bg-[var(--accent)]">
-                  <stat.icon size={22} className="text-[var(--heading)]" />
+              <div className="bg-[#0c2340] border border-white/10 hover:border-[var(--accent)] p-5 sm:p-8 flex flex-col justify-between stats group cursor-pointer h-full transition-all duration-300 shadow-lg">
+                <div className="icon-stats-block bg-[var(--accent)] p-2.5 sm:p-3.5 mb-4 sm:mb-6 ml-auto inline-block self-end transition-transform group-hover:scale-110 shadow-sm">
+                  <stat.icon size={22} className="text-[#0c2340]" />
                 </div>
                 <div>
-                  <div className="numbers-stats text-3xl sm:text-4xl lg:text-5xl font-medium text-[var(--heading)] tracking-tight leading-none mb-2">
+                  <div className="numbers-stats text-3xl sm:text-4xl lg:text-5xl font-medium text-[var(--accent)] tracking-tight leading-none mb-2">
                     {stat.value}
                   </div>
-                  <h6 className="heading-stats text-[12px] sm:text-[14px] font-medium text-[var(--paragraphs)] uppercase tracking-wider leading-[130%] m-0">
+                  <h6 className="heading-stats text-[12px] sm:text-[14px] font-medium text-slate-200 uppercase tracking-wider leading-[130%] m-0">
                     {stat.label}
                   </h6>
                 </div>

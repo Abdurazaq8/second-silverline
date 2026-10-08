@@ -34,7 +34,7 @@ export default function Home() {
       {/* 6. Featured Landmark Projects: Proven Turnkey Execution */}
       <Projects />
 
-      {/* 7. Engineering & Manufacturing Capabilities: 2,500m² Plant, CNC & Fleet */}
+      {/* 7. Engineering & Manufacturing Capabilities: 5,000m² Plant, CNC & Fleet */}
       <Capabilities />
 
       {/* 8. How We Work: 4-Step Engineering Delivery */}

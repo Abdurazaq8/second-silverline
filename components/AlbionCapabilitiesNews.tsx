@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const capabilityFeatures = [
   {
-    tag: "2,500m² Plant • Lusaka",
+    tag: "5,000m² Plant • Lusaka",
     title: "Heavy Steel Fabrication & Assembly Bays",
     summary: "High-capacity facility equipped with overhead cranes and automated tooling for large-scale structural steel manufacturing.",
     link: "/#capabilities",
