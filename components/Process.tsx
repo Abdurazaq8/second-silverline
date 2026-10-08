@@ -32,7 +32,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="section background w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[var(--background)] mb-[14px]">
+    <section id="process" className="section background w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[#0C2340] mb-[14px]">
       <div className="content max-w-[1200px] mx-auto w-full relative z-10">
         
         {/* Section Header */}
@@ -44,11 +44,11 @@ export default function Process() {
                 How We Work
               </div>
             </div>
-            <h2 className="heading text-3xl sm:text-4xl lg:text-[52px] leading-[1.08] tracking-[-1.4px] font-medium text-[var(--heading)] max-w-[700px] m-0">
+            <h2 className="heading text-3xl sm:text-4xl lg:text-[52px] leading-[1.08] tracking-[-1.4px] font-medium text-white max-w-[700px] m-0">
               A transparent, step-by-step engineering process
             </h2>
           </div>
-          <p className="text-[16px] text-[var(--paragraphs)] max-w-sm m-0 leading-relaxed">
+          <p className="text-[16px] text-slate-300 max-w-sm m-0 leading-relaxed">
             Ensuring every civil, structural, and electrical phase is delivered on time, within budget, and to the highest standards.
           </p>
         </div>
@@ -58,23 +58,23 @@ export default function Process() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="bg-white border border-[var(--border)] p-6 sm:p-8 flex flex-col justify-between group process-step-hover cursor-pointer relative shadow-sm"
+              className="bg-[#0F2847] border border-white/10 hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between group cursor-pointer relative shadow-xl"
             >
               <div>
                 {/* Step Top: Big Step Number and Icon */}
-                <div className="flex items-center justify-between mb-6 pb-4 border-b border-[var(--border)]">
-                  <span className="text-3xl font-bold text-[var(--accent)] tracking-tight">
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                  <span className="text-4xl font-black text-[var(--accent)] tracking-tight">
                     {step.number}
                   </span>
-                  <div className="w-10 h-10 bg-[var(--background)] group-hover:bg-[var(--accent)] text-[var(--heading)] flex items-center justify-center transition-colors">
+                  <div className="w-11 h-11 bg-[#08182D] border border-white/10 group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] text-[var(--accent)] group-hover:text-[#0C2340] flex items-center justify-center transition-all duration-300">
                     <step.icon size={20} />
                   </div>
                 </div>
 
-                <h3 className="text-[20px] font-medium text-[var(--heading)] mb-3 leading-[125%] group-hover:text-[var(--accent)] transition-colors">
+                <h3 className="text-[20px] font-medium text-white mb-3 leading-[125%] group-hover:text-[var(--accent)] transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-[14px] text-[var(--paragraphs)] leading-[160%] m-0">
+                <p className="text-[14px] text-slate-300 leading-[160%] m-0">
                   {step.description}
                 </p>
               </div>
@@ -82,7 +82,7 @@ export default function Process() {
               {/* Albion Signature Dual Line */}
               <div className="line-block relative w-full h-[2px] mt-6 flex items-center">
                 <div className="line-full line-full-anim absolute inset-0 bg-[var(--accent)]" />
-                <div className="line-1px w-full h-[1px] bg-[var(--border)]" />
+                <div className="line-1px w-full h-[1px] bg-white/10" />
               </div>
             </div>
           ))}

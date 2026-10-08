@@ -8,27 +8,27 @@
   --color-secondary-foreground: #0c2340;
   --color-accent: #f59e0b;
   --color-cobalt: #2563eb;
-  --color-heading: #0c2340;
-  --color-paragraphs: #334155;
-  --color-background-soft: #eaf2f9;
-  --color-paragraphs-dark: #64748b;
-  --color-info-text: #475569;
-  --color-border-subtle: rgba(12, 35, 64, 0.16);
+  --color-heading: #ffffff;
+  --color-paragraphs: #cbd5e1;
+  --color-background-soft: #0f2847;
+  --color-paragraphs-dark: #94a3b8;
+  --color-info-text: #94a3b8;
+  --color-border-subtle: rgba(255, 255, 255, 0.12);
 
   --animate-spin-slow: spin 10s linear infinite;
   --animate-bounce-slow: bounce 3s infinite;
 }
 
 :root {
-  --paragraphs: #334155;
-  --heading: #0c2340;
+  --paragraphs: #cbd5e1;
+  --heading: #ffffff;
   --accent: #f59e0b;
   --cobalt: #2563eb;
-  --background: #eaf2f9;
+  --background: #0c2340;
   --white: #ffffff;
-  --paragraphs-dark: #64748b;
-  --info-text: #475569;
-  --border: rgba(12, 35, 64, 0.16);
+  --paragraphs-dark: #94a3b8;
+  --info-text: #94a3b8;
+  --border: rgba(255, 255, 255, 0.12);
 }
 
 html {
@@ -39,8 +39,8 @@ html {
 }
 
 body {
-  background-color: #ffffff;
-  color: var(--paragraphs);
+  background-color: #07172B;
+  color: #cbd5e1;
   font-family: var(--font-barlow), 'Barlow', sans-serif;
   letter-spacing: 0.13px;
   margin: 0;

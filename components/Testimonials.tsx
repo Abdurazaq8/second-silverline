@@ -40,7 +40,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="section background w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[var(--background)] mb-[14px]">
+    <section id="testimonials" className="section background w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[#0C2340] mb-[14px]">
       <div className="content max-w-[1200px] mx-auto w-full">
         
         {/* Section Header */}
@@ -52,12 +52,12 @@ export default function Testimonials() {
                 Client Testimonials
               </div>
             </div>
-            <h2 className="heading text-3xl sm:text-4xl lg:text-[52px] leading-[1.08] tracking-[-1.4px] font-medium text-[var(--heading)] max-w-[700px] m-0">
+            <h2 className="heading text-3xl sm:text-4xl lg:text-[52px] leading-[1.08] tracking-[-1.4px] font-medium text-white max-w-[700px] m-0">
               Trusted by Zambia&apos;s leading commercial and industrial enterprises
             </h2>
           </div>
 
-          <p className="text-[16px] text-[var(--paragraphs)] max-w-sm m-0 leading-relaxed">
+          <p className="text-[16px] text-slate-300 max-w-sm m-0 leading-relaxed">
             Real feedback from property developers, international organizations, and energy leaders who rely on our engineering capability.
           </p>
         </div>
@@ -66,40 +66,40 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
           {testimonials.map((item, index) => (
             <Reveal key={index} delay={index * 0.1} width="100%">
-              <div className="bg-white border border-[var(--border)] p-6 sm:p-10 flex flex-col justify-between h-full group testimonial-card-hover cursor-pointer">
+              <div className="bg-[#0F2847] border border-white/10 hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-10 flex flex-col justify-between h-full group cursor-pointer shadow-xl">
                 <div>
                   {/* Top Row: Stars and Tag */}
-                  <div className="flex items-center justify-between mb-6 pb-4 border-b border-[var(--border)]">
+                  <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
                     <div className="flex items-center gap-1">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} size={16} className="text-[var(--accent)] fill-[var(--accent)]" />
                       ))}
                     </div>
-                    <span className="text-[12px] font-semibold uppercase tracking-[1.5px] text-[var(--info-text)]">
+                    <span className="text-[12px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)]">
                       {item.tag}
                     </span>
                   </div>
 
                   {/* Content Quote */}
-                  <p className="text-[16px] sm:text-[17px] leading-[170%] text-[var(--paragraphs)] italic mb-8 font-light">
+                  <p className="text-[16px] sm:text-[17px] leading-[170%] text-slate-200 italic mb-8 font-light">
                     &ldquo;{item.content}&rdquo;
                   </p>
                 </div>
 
                 {/* Bottom Row: Client info */}
-                <div className="flex items-center gap-4 pt-4 border-t border-[var(--border)]">
-                  <div className="w-12 h-12 rounded-full bg-[var(--accent)] text-[var(--heading)] font-bold flex items-center justify-center shrink-0 text-base">
+                <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                  <div className="w-12 h-12 rounded-full bg-[var(--accent)] text-[#0C2340] font-bold flex items-center justify-center shrink-0 text-base shadow-sm">
                     {item.initials}
                   </div>
                   <div>
-                    <h4 className="text-[17px] font-semibold text-[var(--heading)] m-0 leading-tight">
+                    <h4 className="text-[17px] font-semibold text-white m-0 leading-tight">
                       {item.name}
                     </h4>
-                    <div className="text-[13px] text-[var(--paragraphs-dark)] flex items-center gap-1.5 mt-1">
+                    <div className="text-[13px] text-slate-300 flex items-center gap-1.5 mt-1">
                       <Building2 size={13} className="text-[var(--accent)] shrink-0" />
                       <span>{item.company}</span>
                       <span>•</span>
-                      <span className="text-[var(--paragraphs)] font-medium">{item.project}</span>
+                      <span className="text-slate-200 font-medium">{item.project}</span>
                     </div>
                   </div>
                 </div>

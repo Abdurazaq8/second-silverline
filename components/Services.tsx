@@ -131,7 +131,7 @@ function isLocalImage(src: string) {
 
 export default function Services() {
   return (
-    <section id="services" className="section w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-white mb-[14px]">
+    <section id="services" className="section w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[#08182D] mb-[14px]">
       <div className="content max-w-[1200px] mx-auto w-full">
         
         {/* Section Header */}
@@ -143,12 +143,12 @@ export default function Services() {
                 Our Services
               </div>
             </div>
-            <h2 className="heading text-3xl sm:text-4xl lg:text-[52px] leading-[1.08] tracking-[-1.4px] font-medium text-[var(--heading)] max-w-[700px] m-0">
+            <h2 className="heading text-3xl sm:text-4xl lg:text-[52px] leading-[1.08] tracking-[-1.4px] font-medium text-white max-w-[700px] m-0">
               Comprehensive engineering and construction disciplines
             </h2>
           </div>
 
-          <p className="text-[16px] text-[var(--paragraphs)] max-w-sm m-0 leading-relaxed">
+          <p className="text-[16px] text-slate-300 max-w-sm m-0 leading-relaxed">
             Tailored to meet the demanding requirements of commercial developers, mines, and infrastructure projects across Zambia.
           </p>
         </div>
@@ -157,11 +157,11 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <Reveal key={index} delay={index * 0.05} width="100%">
-              <div className="bg-white border border-[var(--border)] group h-full flex flex-col service-card-hover cursor-pointer">
+              <div className="bg-[#0F2847] border border-white/10 group h-full flex flex-col hover:border-[var(--accent)] hover:shadow-2xl transition-all duration-300 cursor-pointer">
                 
                 {/* Media Container (Image or Video) */}
                 {(service.image || service.video) && (
-                  <div className="relative h-48 w-full overflow-hidden bg-[var(--background)]">
+                  <div className="relative h-48 w-full overflow-hidden bg-[#08182D]">
                     {service.video ? (
                       <LazyServiceVideo videoSrc={service.video} poster={service.image} />
                     ) : isLocalImage(service.image) ? (
@@ -185,27 +185,27 @@ export default function Services() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                   </div>
                 )}
 
                 {/* Content Box */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="mb-4 text-[var(--heading)] group-hover:text-[var(--accent)] transition-colors">
+                    <div className="mb-4 text-[var(--accent)] group-hover:scale-110 transition-transform inline-block">
                       <service.icon size={36} />
                     </div>
-                    <h3 className="text-[20px] font-medium text-[var(--heading)] leading-[125%] mb-3 group-hover:text-[var(--accent)] transition-colors">
+                    <h3 className="text-[20px] font-medium text-white leading-[125%] mb-3 group-hover:text-[var(--accent)] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-[14px] text-[var(--paragraphs)] leading-[160%] m-0">
+                    <p className="text-[14px] text-slate-300 leading-[160%] m-0">
                       {service.description}
                     </p>
                   </div>
 
                   <div className="line-block relative w-full h-[2px] mt-6 flex items-center">
                     <div className="line-full line-full-anim absolute inset-0 bg-[var(--accent)]" />
-                    <div className="line-1px w-full h-[1px] bg-[var(--border)]" />
+                    <div className="line-1px w-full h-[1px] bg-white/10" />
                   </div>
                 </div>
 

@@ -159,7 +159,7 @@ export default function Capabilities() {
   ];
 
   return (
-    <section id="capabilities" className="section w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-white mb-[14px]">
+    <section id="capabilities" className="section w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-12 bg-[#08182D] mb-[14px]">
       <div className="content max-w-[1200px] mx-auto w-full">
         
         {/* Section Header */}
@@ -171,12 +171,12 @@ export default function Capabilities() {
                 Our Capabilities
               </div>
             </div>
-            <h2 className="heading text-3xl sm:text-4xl lg:text-[52px] leading-[1.08] tracking-[-1.4px] font-medium text-[var(--heading)] max-w-[700px] m-0">
+            <h2 className="heading text-3xl sm:text-4xl lg:text-[52px] leading-[1.08] tracking-[-1.4px] font-medium text-white max-w-[700px] m-0">
               Engineering capability built for industrial scale
             </h2>
           </div>
 
-          <p className="text-[16px] text-[var(--paragraphs)] max-w-sm m-0 leading-relaxed">
+          <p className="text-[16px] text-slate-300 max-w-sm m-0 leading-relaxed">
             From precision fabrication in Lusaka to turnkey site erection, our integrated infrastructure guarantees execution certainty.
           </p>
         </div>
@@ -185,10 +185,10 @@ export default function Capabilities() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-20">
           {capabilityCards.map((card, index) => (
             <Reveal key={index} delay={index * 0.1} width="100%">
-              <div className="bg-white border border-[var(--border)] group h-full flex flex-col capability-card-hover cursor-pointer">
+              <div className="bg-[#0F2847] border border-white/10 group h-full flex flex-col hover:border-[var(--accent)] hover:shadow-2xl transition-all duration-300 cursor-pointer">
                 
                 {/* Image Container with Badge */}
-                <div className="relative h-48 w-full overflow-hidden bg-[var(--background)]">
+                <div className="relative h-48 w-full overflow-hidden bg-[#08182D]">
                   <Image
                     src={card.image}
                     alt={card.title}
@@ -197,7 +197,7 @@ export default function Capabilities() {
                     className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   />
-                  <div className="absolute top-3 left-3 bg-[var(--accent)] text-[var(--heading)] text-[11px] font-bold px-3 py-1 uppercase tracking-wider">
+                  <div className="absolute top-3 left-3 bg-[var(--accent)] text-[#0C2340] text-[11px] font-bold px-3 py-1 uppercase tracking-wider">
                     {card.badge}
                   </div>
                 </div>
@@ -205,20 +205,20 @@ export default function Capabilities() {
                 {/* Card Content */}
                 <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between">
                   <div>
-                    <span className="text-3xl font-medium text-[var(--heading)] block mb-1 group-hover:text-[var(--accent)] transition-colors">
+                    <span className="text-3xl font-medium text-[var(--accent)] block mb-1 group-hover:scale-105 transition-transform">
                       {card.value}
                     </span>
-                    <h3 className="text-[18px] font-medium text-[var(--heading)] mb-2">
+                    <h3 className="text-[18px] font-medium text-white mb-2">
                       {card.title}
                     </h3>
-                    <p className="text-[14px] text-[var(--paragraphs)] leading-[160%] m-0">
+                    <p className="text-[14px] text-slate-300 leading-[160%] m-0">
                       {card.description}
                     </p>
                   </div>
 
                   <div className="line-block relative w-full h-[2px] mt-6 flex items-center">
                     <div className="line-full line-full-anim absolute inset-0 bg-[var(--accent)]" />
-                    <div className="line-1px w-full h-[1px] bg-[var(--border)]" />
+                    <div className="line-1px w-full h-[1px] bg-white/10" />
                   </div>
                 </div>
 
@@ -228,7 +228,7 @@ export default function Capabilities() {
         </div>
 
         {/* Fabrication Facility Section */}
-        <div className="mb-20 pt-12 border-t border-[var(--border)]">
+        <div className="mb-20 pt-12 border-t border-white/10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             {/* Left: Facility Features */}
@@ -241,21 +241,21 @@ export default function Capabilities() {
                       Manufacturing Infrastructure
                     </div>
                   </div>
-                  <h3 className="text-3xl sm:text-4xl font-medium text-[var(--heading)] tracking-[-1px] mb-3">
+                  <h3 className="text-3xl sm:text-4xl font-medium text-white tracking-[-1px] mb-3">
                     2,500m² Lusaka Fabrication Plant
                   </h3>
-                  <p className="text-[16px] text-[var(--paragraphs)] leading-relaxed m-0">
+                  <p className="text-[16px] text-slate-300 leading-relaxed m-0">
                     Our high-capacity facility located in Lusaka is engineered to support large-scale structural steel manufacturing, automated plasma cutting, and complex pre-engineered building systems.
                   </p>
                 </div>
 
-                <div className="bg-[var(--background)] p-6 sm:p-8 border border-[var(--border)] space-y-3">
-                  <h4 className="text-[14px] font-semibold text-[var(--heading)] uppercase tracking-wider mb-4">
+                <div className="bg-[#0F2847] p-6 sm:p-8 border border-white/10 space-y-3">
+                  <h4 className="text-[14px] font-semibold text-[var(--accent)] uppercase tracking-wider mb-4">
                     Key Facility Features
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {fabricationFeatures.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-2.5 text-[14px] text-[var(--heading)] font-normal">
+                      <div key={i} className="flex items-start gap-2.5 text-[14px] text-slate-200 font-normal">
                         <CheckCircle2 size={16} className="text-[var(--accent)] mt-0.5 shrink-0" />
                         <span>{feature}</span>
                       </div>
@@ -270,7 +270,7 @@ export default function Capabilities() {
               <div className="space-y-4">
                 
                 {/* Main Video Box */}
-                <div className="relative overflow-hidden aspect-video border border-[var(--border)] bg-black group shadow-sm">
+                <div className="relative overflow-hidden aspect-video border border-white/10 bg-black group shadow-sm">
                   <video
                     id="cnc-capability-video"
                     src="/capabilities/cnc-machine.mp4"
@@ -282,7 +282,7 @@ export default function Capabilities() {
                     className="w-full h-full object-cover"
                   />
                   
-                  <div className="absolute top-4 left-4 bg-[var(--accent)] text-[var(--heading)] text-[11px] font-bold px-3 py-1 uppercase tracking-wider">
+                  <div className="absolute top-4 left-4 bg-[var(--accent)] text-[#0C2340] text-[11px] font-bold px-3 py-1 uppercase tracking-wider">
                     CNC Precision Cutting
                   </div>
 
@@ -306,7 +306,7 @@ export default function Capabilities() {
 
                 {/* Sub-Images Grid */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="relative aspect-video overflow-hidden border border-[var(--border)] group bg-[var(--background)]">
+                  <div className="relative aspect-video overflow-hidden border border-white/10 group bg-[#08182D]">
                     <Image
                       src="/capabilities/fabrication-facility.jpg"
                       alt="Lusaka Facility"
@@ -314,12 +314,12 @@ export default function Capabilities() {
                       className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 50vw, 25vw"
                     />
-                    <div className="absolute bottom-0 inset-x-0 bg-[var(--heading)]/85 text-white text-[11px] font-medium px-2 py-1 text-center">
+                    <div className="absolute bottom-0 inset-x-0 bg-[#0C2340]/90 text-white text-[11px] font-medium px-2 py-1 text-center border-t border-white/10">
                       Lusaka Facility Workshop
                     </div>
                   </div>
 
-                  <div className="relative aspect-video overflow-hidden border border-[var(--border)] group bg-[var(--background)]">
+                  <div className="relative aspect-video overflow-hidden border border-white/10 group bg-[#08182D]">
                     <Image
                       src="/capabilities/welding-workshop.jpg"
                       alt="Welding Stations"
@@ -327,7 +327,7 @@ export default function Capabilities() {
                       className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 50vw, 25vw"
                     />
-                    <div className="absolute bottom-0 inset-x-0 bg-[var(--heading)]/85 text-white text-[11px] font-medium px-2 py-1 text-center">
+                    <div className="absolute bottom-0 inset-x-0 bg-[#0C2340]/90 text-white text-[11px] font-medium px-2 py-1 text-center border-t border-white/10">
                       Welding &amp; Assembly Bays
                     </div>
                   </div>
@@ -340,55 +340,55 @@ export default function Capabilities() {
         </div>
 
         {/* Engineering & Workforce Section */}
-        <div className="mb-20 pt-12 border-t border-[var(--border)]">
+        <div className="mb-20 pt-12 border-t border-white/10">
           <div className="text-center mb-12">
             <div className="subtitle flex items-center justify-center mb-2">
-              <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
-              <div className="text-subtitle ml-3 text-[13px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
+              <div className="line-subtitle w-[27px] h-[1px] bg-[var(--accent)]" />
+              <div className="text-subtitle ml-3 text-[13px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)]">
                 Human Capital &amp; Technical Depth
               </div>
             </div>
-            <h3 className="text-3xl sm:text-4xl font-medium text-[var(--heading)] tracking-[-1px] mb-3">
+            <h3 className="text-3xl sm:text-4xl font-medium text-white tracking-[-1px] mb-3">
               Engineering &amp; Technical Workforce
             </h3>
-            <p className="text-[16px] text-[var(--paragraphs)] max-w-2xl mx-auto leading-relaxed m-0">
+            <p className="text-[16px] text-slate-300 max-w-2xl mx-auto leading-relaxed m-0">
               Our registered structural engineers and certified artisans bring decades of field-proven execution discipline to every build.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamStructure.map((team, idx) => (
-              <div key={idx} className="p-6 bg-[var(--background)] border border-[var(--border)] flex flex-col items-start group hover:border-[var(--heading)] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                <div className="p-3 bg-white mb-4 text-[var(--heading)] group-hover:text-[var(--accent)] transition-colors border border-[var(--border)] shadow-sm">
+              <div key={idx} className="p-6 bg-[#0F2847] border border-white/10 flex flex-col items-start group hover:border-[var(--accent)] hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                <div className="p-3 bg-[#08182D] mb-4 text-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-[#0C2340] transition-colors border border-white/10">
                   <team.icon size={28} />
                 </div>
-                <h4 className="font-medium text-[var(--heading)] text-[18px] mb-2">{team.title}</h4>
-                <p className="text-[14px] text-[var(--paragraphs)] leading-[160%] m-0">{team.description}</p>
+                <h4 className="font-medium text-white text-[18px] mb-2 group-hover:text-[var(--accent)] transition-colors">{team.title}</h4>
+                <p className="text-[14px] text-slate-300 leading-[160%] m-0">{team.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Quality Control & Compliance Side-by-Side */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20 pt-12 border-t border-[var(--border)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20 pt-12 border-t border-white/10">
           
           {/* Quality Control */}
-          <div className="bg-[var(--background)] p-8 sm:p-10 border border-[var(--border)] flex flex-col justify-between">
+          <div className="bg-[#0F2847] p-8 sm:p-10 border border-white/10 flex flex-col justify-between">
             <div>
               <div className="subtitle flex items-center mb-3">
-                <div className="line-subtitle w-[27px] h-[1px] bg-[var(--heading)]" />
-                <div className="text-subtitle ml-3 text-[13px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)]">
+                <div className="line-subtitle w-[27px] h-[1px] bg-[var(--accent)]" />
+                <div className="text-subtitle ml-3 text-[13px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)]">
                   Inspection Protocols
                 </div>
               </div>
-              <h3 className="text-2xl font-medium text-[var(--heading)] mb-4">Quality Assurance &amp; Safety</h3>
-              <p className="text-[15px] text-[var(--paragraphs)] leading-relaxed mb-6">
+              <h3 className="text-2xl font-medium text-white mb-4">Quality Assurance &amp; Safety</h3>
+              <p className="text-[15px] text-slate-300 leading-relaxed mb-6">
                 Structured inspection and quality verification procedures executed throughout fabrication and construction.
               </p>
               <div className="space-y-2.5 mb-6">
                 {qcSystems.map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 p-3 bg-white border border-[var(--border)] text-[14px] text-[var(--heading)] font-normal hover:border-[var(--accent)] hover:translate-x-1.5 transition-all duration-200 cursor-default">
-                    <span className="w-5 h-5 bg-[var(--accent)] text-[var(--heading)] text-[11px] font-bold flex items-center justify-center shrink-0">
+                  <div key={i} className="flex items-center gap-3 p-3 bg-[#08182D] border border-white/10 text-[14px] text-slate-200 font-normal hover:border-[var(--accent)] hover:translate-x-1.5 transition-all duration-200 cursor-default">
+                    <span className="w-5 h-5 bg-[var(--accent)] text-[#0C2340] text-[11px] font-bold flex items-center justify-center shrink-0">
                       {i + 1}
                     </span>
                     <span>{item}</span>
@@ -396,13 +396,13 @@ export default function Capabilities() {
                 ))}
               </div>
             </div>
-            <p className="text-xs text-[var(--paragraphs-dark)] pt-3 border-t border-[var(--border)] italic m-0">
+            <p className="text-xs text-slate-400 pt-3 border-t border-white/10 italic m-0">
               Guaranteed compliance with engineering specifications and statutory safety standards.
             </p>
           </div>
 
           {/* Compliance & Certification */}
-          <div className="bg-[var(--background)] p-8 sm:p-10 border border-[var(--border)] flex flex-col justify-between">
+          <div className="bg-[#0F2847] p-8 sm:p-10 border border-white/10 flex flex-col justify-between">
             <div>
               <div className="subtitle flex items-center mb-3">
                 <div className="line-subtitle w-[27px] h-[1px] bg-[var(--accent)]" />
@@ -410,30 +410,30 @@ export default function Capabilities() {
                   Accredited Operations
                 </div>
               </div>
-              <h3 className="text-2xl font-medium text-[var(--heading)] mb-4">Statutory &amp; Tender Compliance</h3>
-              <p className="text-[15px] text-[var(--paragraphs)] leading-relaxed mb-6">
+              <h3 className="text-2xl font-medium text-white mb-4">Statutory &amp; Tender Compliance</h3>
+              <p className="text-[15px] text-slate-300 leading-relaxed mb-6">
                 Operating in full accordance with statutory, tax, and workforce regulatory bodies in Zambia.
               </p>
               <div className="space-y-3 mb-6">
                 {certifications.map((cert, i) => (
-                  <div key={i} className="flex items-center justify-between p-3.5 bg-white border border-[var(--border)] hover:border-[var(--accent)] hover:translate-x-1.5 transition-all duration-200">
+                  <div key={i} className="flex items-center justify-between p-3.5 bg-[#08182D] border border-white/10 hover:border-[var(--accent)] hover:translate-x-1.5 transition-all duration-200">
                     <div className="flex items-center gap-3">
-                      <FileCheck size={18} className="text-[var(--heading)] shrink-0" />
+                      <FileCheck size={18} className="text-[var(--accent)] shrink-0" />
                       <div>
-                        <span className="text-[14px] font-medium text-[var(--heading)] block">{cert.name}</span>
-                        <span className="text-[12px] text-[var(--paragraphs)]">{cert.status}</span>
+                        <span className="text-[14px] font-medium text-white block">{cert.name}</span>
+                        <span className="text-[12px] text-slate-300">{cert.status}</span>
                       </div>
                     </div>
-                    <span className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-[var(--accent)] text-[var(--heading)]">
+                    <span className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-[var(--accent)] text-[#0C2340]">
                       {cert.badge}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="pt-3 border-t border-[var(--border)] flex items-center justify-between">
-              <span className="text-xs text-[var(--paragraphs)] font-medium">Tender-ready compliance packages</span>
-              <Link href="/contact" className="text-xs font-bold text-[var(--heading)] hover:text-[var(--accent)] transition-colors uppercase tracking-wider">
+            <div className="pt-3 border-t border-white/10 flex items-center justify-between">
+              <span className="text-xs text-slate-400 font-medium">Tender-ready compliance packages</span>
+              <Link href="/contact" className="text-xs font-bold text-[var(--accent)] hover:underline transition-colors uppercase tracking-wider">
                 Request Dossier →
               </Link>
             </div>
@@ -442,25 +442,25 @@ export default function Capabilities() {
         </div>
 
         {/* Call To Action Banner */}
-        <div className="bg-[var(--heading)] text-white p-8 sm:p-14 text-center relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#0C2340] via-[#102F54] to-[#0C2340] border-2 border-[var(--accent)] text-white p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
           <div className="max-w-2xl mx-auto space-y-4">
             <div className="subtitle flex items-center justify-center mb-2">
-              <div className="line-subtitle w-[27px] h-[1px] bg-white" />
-              <div className="text-subtitle ml-3 text-[13px] font-semibold uppercase tracking-[1.5px] text-white">
+              <div className="line-subtitle w-[27px] h-[1px] bg-[var(--accent)]" />
+              <div className="text-subtitle ml-3 text-[13px] font-semibold uppercase tracking-[1.5px] text-[var(--accent)]">
                 Steel &amp; Concrete Construction
               </div>
             </div>
             <h3 className="text-3xl sm:text-4xl font-medium tracking-tight text-white m-0">
               Work With a Team Built for Scale
             </h3>
-            <p className="text-white/80 text-[16px] leading-relaxed">
+            <p className="text-slate-200 text-[16px] leading-relaxed">
               Silverline Engineering Ltd provides the engineering expertise, fabrication capability, and execution discipline required to deliver complex industrial projects.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link
                 href="/contact"
-                className="button w-full sm:w-auto bg-[var(--accent)] text-[var(--heading)] px-8 py-5 flex items-center justify-center font-semibold text-[14px] uppercase tracking-[1.5px] no-underline hover:opacity-90 transition-opacity"
+                className="button w-full sm:w-auto bg-[var(--accent)] text-[#0C2340] px-8 py-5 flex items-center justify-center font-bold text-[14px] uppercase tracking-[1.5px] no-underline hover:brightness-110 transition-all shadow-lg"
               >
                 <span>Request a Quote</span>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -479,14 +479,14 @@ export default function Capabilities() {
                 href="https://wa.me/260966626579"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="button w-full sm:w-auto bg-emerald-600 text-white px-8 py-5 flex items-center justify-center font-semibold text-[14px] uppercase tracking-[1.5px] no-underline hover:bg-emerald-700 transition-colors"
+                className="button w-full sm:w-auto bg-emerald-600 text-white px-8 py-5 flex items-center justify-center font-semibold text-[14px] uppercase tracking-[1.5px] no-underline hover:bg-emerald-700 transition-colors shadow-md"
               >
                 <WhatsAppIcon size={16} className="text-white mr-2" />
                 <span>WhatsApp</span>
               </a>
             </div>
 
-            <div className="text-xs text-white/60 pt-3">
+            <div className="text-xs text-slate-300 pt-3">
               <Clock size={13} className="inline mr-1 text-[var(--accent)]" />
               <span>MON – FRI: 8:00 AM – 5:00 PM | SAT: 8:00 AM – 1:00 PM</span>
             </div>
