@@ -70,17 +70,17 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-[13px] font-semibold uppercase tracking-[1.5px] transition-colors duration-200 !no-underline relative py-1 ${
+                className={`text-[13px] font-semibold uppercase tracking-[1.5px] px-3.5 py-1.5 transition-all duration-200 !no-underline relative rounded-none border-b-2 ${
                   isActive
-                    ? "!text-[var(--heading)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[var(--accent)]"
-                    : "!text-[var(--paragraphs)] hover:!text-[var(--heading)]"
+                    ? "!text-[var(--heading)] bg-[var(--accent)]/20 border-[var(--accent)]"
+                    : "!text-[var(--paragraphs)] border-transparent hover:!text-[var(--heading)] hover:bg-[var(--accent)]/20 hover:border-[var(--accent)]"
                 }`}
                 style={{ textDecoration: "none" }}
               >
@@ -129,12 +129,12 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)] py-3 border-b border-[var(--border)] !no-underline flex items-center justify-between"
+                className="text-[14px] font-semibold uppercase tracking-[1.5px] text-[var(--heading)] px-3 py-3 border-b border-[var(--border)] border-l-4 border-l-transparent hover:border-l-[var(--accent)] hover:bg-[var(--accent)]/15 transition-all duration-200 !no-underline flex items-center justify-between group"
                 style={{ textDecoration: "none", color: "#101b22" }}
                 onClick={() => setIsOpen(false)}
               >
-                <span>{item.name}</span>
-                <span className="text-xs text-[var(--paragraphs-dark)]">→</span>
+                <span className="group-hover:text-[var(--heading)]">{item.name}</span>
+                <span className="text-xs text-[var(--paragraphs-dark)] group-hover:text-[var(--accent)] group-hover:translate-x-1 transition-all">→</span>
               </Link>
             ))}
             <div className="pt-3">
