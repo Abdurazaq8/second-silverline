@@ -52,8 +52,7 @@ export default function Hero() {
         <img
           src={heroPoster}
           alt="Silverline Engineering"
-          // @ts-expect-error fetchpriority attribute
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
