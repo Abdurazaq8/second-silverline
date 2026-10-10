@@ -239,14 +239,6 @@ export default function ProjectDetailClient({ project }: { project: ProjectItem 
                     {project.category}
                   </dd>
                 </div>
-                <div className="pt-3.5 flex justify-between gap-4">
-                  <dt className="text-[12px] font-semibold uppercase tracking-[1.5px] text-[var(--info-text)]">
-                    Timeline
-                  </dt>
-                  <dd className="font-medium text-[var(--heading)] text-right m-0">
-                    {project.year}
-                  </dd>
-                </div>
                 <div className="pt-3.5 flex justify-between items-center gap-4">
                   <dt className="text-[12px] font-semibold uppercase tracking-[1.5px] text-[var(--info-text)]">
                     Status
