@@ -3,12 +3,58 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Facebook, MapPin, Mail, Phone, ArrowUpRight } from "lucide-react";
+import { Instagram, Facebook, MapPin, Mail, Phone, ArrowUpRight, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Reveal } from "./Reveal";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function Contact() {
   const [inquiryType, setInquiryType] = useState("General");
+  const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+
+      const accessKey =
+        process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "00c82320-be18-4a6c-b94a-87232b5f30f3";
+
+      formData.append("access_key", accessKey);
+      formData.append(
+        "subject",
+        `New Tender / Project Inquiry: [${inquiryType}] - Silverline Engineering`
+      );
+      formData.append("from_name", "Silverline Engineering Website");
+      formData.append("discipline", inquiryType);
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setFormStatus("success");
+        form.reset();
+      } else {
+        setFormStatus("error");
+        setErrorMessage(
+          data.message || "Failed to send inquiry. Please try again or message our team directly on WhatsApp."
+        );
+      }
+    } catch {
+      setFormStatus("error");
+      setErrorMessage(
+        "Network connection issue. Please check your connection or contact our team directly on WhatsApp."
+      );
+    }
+  };
 
   const inquiryTypes = [
     "Structural Steel",
@@ -238,114 +284,197 @@ export default function Contact() {
               </div>
             </Reveal>
 
-            {/* Form */}
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              {/* Inquiry Type Chips */}
-              <Reveal delay={0.2} width="100%">
-                <div>
-                  <label className="block text-[13px] font-semibold uppercase tracking-[1.2px] text-[var(--heading)] mb-2.5">
-                    Engineering Discipline
-                  </label>
-                  <div className="flex flex-wrap gap-2">
-                    {inquiryTypes.map((type) => (
-                      <button
-                        key={type}
-                        type="button"
-                        onClick={() => setInquiryType(type)}
-                        className={`px-3.5 py-2 text-[12px] font-semibold uppercase tracking-[1px] rounded-none transition-all cursor-pointer ${
-                          inquiryType === type
-                            ? "bg-[var(--heading)] text-white border border-[var(--heading)]"
-                            : "bg-white text-[var(--paragraphs)] border border-[var(--border)] hover:border-[var(--heading)] hover:text-[var(--heading)]"
-                        }`}
-                      >
-                        {type}
-                      </button>
-                    ))}
+            {/* Form or Success State */}
+            {formStatus === "success" ? (
+              <Reveal width="100%">
+                <div className="p-8 sm:p-10 bg-emerald-50/80 border border-emerald-300 text-left space-y-5">
+                  <div className="w-12 h-12 bg-emerald-600 text-white flex items-center justify-center rounded-none shadow-sm">
+                    <CheckCircle2 size={26} />
+                  </div>
+                  <div>
+                    <h4 className="text-2xl sm:text-3xl font-medium text-[var(--heading)] tracking-tight mb-2">
+                      Inquiry Received Successfully!
+                    </h4>
+                    <p className="text-[15px] sm:text-[16px] text-[var(--paragraphs)] leading-[170%] m-0">
+                      Thank you for contacting Silverline Engineering. Your technical scope and project specifications have been dispatched to our estimating team. We will review your requirements and respond via email or phone within 24 hours.
+                    </p>
+                  </div>
+                  <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setFormStatus("idle")}
+                      className="px-6 py-3.5 bg-[var(--heading)] hover:bg-black text-white text-[12px] font-semibold uppercase tracking-[1.5px] transition-colors cursor-pointer"
+                    >
+                      Send Another Inquiry
+                    </button>
+                    <a
+                      href="https://wa.me/260966626579"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white text-[12px] font-semibold uppercase tracking-[1.5px] transition-colors inline-flex items-center justify-center gap-2 no-underline"
+                    >
+                      <WhatsAppIcon size={14} />
+                      <span>Urgent Tender? WhatsApp</span>
+                    </a>
                   </div>
                 </div>
               </Reveal>
+            ) : (
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                {/* Anti-spam honeypot */}
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  className="hidden"
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
 
-              {/* Names */}
-              <Reveal delay={0.25} width="100%">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Error Banner */}
+                {formStatus === "error" && (
+                  <div className="p-4 bg-red-50 border border-red-300 flex items-start gap-3 text-red-900 text-[14px]">
+                    <AlertCircle size={18} className="shrink-0 mt-0.5 text-red-600" />
+                    <div className="space-y-1">
+                      <p className="font-semibold m-0">{errorMessage}</p>
+                      <p className="text-[13px] text-red-700 m-0">
+                        You can also contact our dispatch directly on{" "}
+                        <a
+                          href="https://wa.me/260966626579"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline font-bold"
+                        >
+                          WhatsApp (+260 966 626579)
+                        </a>
+                        .
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Inquiry Type Chips */}
+                <Reveal delay={0.2} width="100%">
+                  <div>
+                    <label className="block text-[13px] font-semibold uppercase tracking-[1.2px] text-[var(--heading)] mb-2.5">
+                      Engineering Discipline
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {inquiryTypes.map((type) => (
+                        <button
+                          key={type}
+                          type="button"
+                          onClick={() => setInquiryType(type)}
+                          className={`px-3.5 py-2 text-[12px] font-semibold uppercase tracking-[1px] rounded-none transition-all cursor-pointer ${
+                            inquiryType === type
+                              ? "bg-[var(--heading)] text-white border border-[var(--heading)]"
+                              : "bg-white text-[var(--paragraphs)] border border-[var(--border)] hover:border-[var(--heading)] hover:text-[var(--heading)]"
+                          }`}
+                        >
+                          {type}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </Reveal>
+
+                {/* Names */}
+                <Reveal delay={0.25} width="100%">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
+                        First Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="first_name"
+                        required
+                        placeholder="e.g. Mwansa"
+                        className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
+                        Last Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="last_name"
+                        required
+                        placeholder="e.g. Phiri"
+                        className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
+                      />
+                    </div>
+                  </div>
+                </Reveal>
+
+                {/* Email & Phone */}
+                <Reveal delay={0.3} width="100%">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="name@company.com"
+                        className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="+260 9..."
+                        className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
+                      />
+                    </div>
+                  </div>
+                </Reveal>
+
+                {/* Message */}
+                <Reveal delay={0.35} width="100%">
                   <div>
                     <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
-                      First Name *
+                      Project Scope / Specifications *
                     </label>
-                    <input
-                      type="text"
+                    <textarea
+                      rows={4}
+                      name="message"
                       required
-                      placeholder="e.g. Mwansa"
-                      className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
-                    />
+                      placeholder="Describe your site location, structural requirements, BOQ details, or questions..."
+                      className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none resize-none"
+                    ></textarea>
                   </div>
-                  <div>
-                    <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Phiri"
-                      className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
-                    />
-                  </div>
-                </div>
-              </Reveal>
+                </Reveal>
 
-              {/* Email & Phone */}
-              <Reveal delay={0.3} width="100%">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="name@company.com"
-                      className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      placeholder="+260 9..."
-                      className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none"
-                    />
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* Message */}
-              <Reveal delay={0.35} width="100%">
-                <div>
-                  <label className="block text-[12px] font-semibold uppercase tracking-[1px] text-[var(--heading)] mb-1.5">
-                    Project Scope / Specifications *
-                  </label>
-                  <textarea
-                    rows={4}
-                    required
-                    placeholder="Describe your site location, structural requirements, timeline, or BOQ details..."
-                    className="w-full px-4 py-3.5 bg-white border border-[var(--border)] text-[16px] sm:text-sm text-[var(--heading)] placeholder-gray-400 focus:outline-none focus:border-[var(--heading)] transition-colors rounded-none resize-none"
-                  ></textarea>
-                </div>
-              </Reveal>
-
-              {/* Submit Button */}
-              <Reveal delay={0.4} width="100%">
-                <button
-                  type="submit"
-                  className="w-full bg-[var(--accent)] hover:brightness-105 text-[var(--heading)] px-8 py-5 text-[14px] font-semibold uppercase tracking-[1.5px] flex items-center justify-center gap-2 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg border-0"
-                >
-                  <span>Submit Inquiry</span>
-                  <ArrowUpRight size={16} />
-                </button>
-              </Reveal>
-            </form>
+                {/* Submit Button */}
+                <Reveal delay={0.4} width="100%">
+                  <button
+                    type="submit"
+                    disabled={formStatus === "loading"}
+                    className="w-full bg-[var(--accent)] hover:brightness-105 disabled:opacity-75 disabled:cursor-not-allowed text-[var(--heading)] px-8 py-5 text-[14px] font-semibold uppercase tracking-[1.5px] flex items-center justify-center gap-2 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-lg border-0"
+                  >
+                    {formStatus === "loading" ? (
+                      <>
+                        <Loader2 size={16} className="animate-spin" />
+                        <span>Transmitting Inquiry...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Submit Inquiry</span>
+                        <ArrowUpRight size={16} />
+                      </>
+                    )}
+                  </button>
+                </Reveal>
+              </form>
+            )}
           </div>
 
         </div>
