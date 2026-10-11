@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow } from "next/font/google";
+import Script from "next/script";
+import GSAPScrollAnimations from "@/components/GSAPScrollAnimations";
 import "./globals.css";
 
 const barlow = Barlow({
@@ -8,8 +10,6 @@ const barlow = Barlow({
   weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
-
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Silverline Engineering - Quality Construction & Engineering Services",
@@ -104,8 +104,6 @@ const jsonLd = {
   ]
 };
 
-import GSAPScrollAnimations from "@/components/GSAPScrollAnimations";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -116,6 +114,24 @@ export default function RootLayout({
       <body
         className={`${barlow.variable} antialiased`}
       >
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-EE0YHLNRNF"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-EE0YHLNRNF');
+            `,
+          }}
+        />
         <Script
           id="json-ld"
           type="application/ld+json"
