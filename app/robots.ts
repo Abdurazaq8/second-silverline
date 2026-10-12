@@ -1,14 +1,32 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
-    return {
-        rules: {
-            userAgent: '*',
-            allow: '/',
-            disallow: '/private/',
-        },
-        sitemap: 'https://silverline-engineering.com/sitemap.xml',
-    }
+  return {
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/_next/"],
+      },
+      {
+        userAgent: [
+          "GPTBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "anthropic-ai",
+          "PerplexityBot",
+          "Google-Extended",
+          "Applebot-Extended",
+          "CCBot",
+          "cohere-ai",
+          "Meta-ExternalAgent",
+        ],
+        allow: "/",
+      },
+    ],
+    sitemap: "https://silverline-engineering.com/sitemap.xml",
+    host: "https://silverline-engineering.com",
+  };
 }

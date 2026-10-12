@@ -7,6 +7,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Contact Us - Silverline Engineering",
     description: "Get in touch with Silverline Engineering for your construction and engineering needs in Zambia.",
+    alternates: {
+        canonical: "https://silverline-engineering.com/contact",
+    },
 };
 
 export default function ContactPage() {

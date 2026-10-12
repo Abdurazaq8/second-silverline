@@ -29,12 +29,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const pageUrl = `https://silverline-engineering.com/projects/${project.slug}`;
+
   return {
     title: `${project.title} | Silverline Engineering Case Study`,
     description: project.overview || project.description,
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
       title: `${project.title} - Silverline Engineering`,
-      description: project.description,
+      description: project.overview || project.description,
+      url: pageUrl,
+      images: [project.localImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} - Silverline Engineering`,
+      description: project.overview || project.description,
       images: [project.localImage],
     },
   };
@@ -56,8 +68,43 @@ export default async function ProjectPage({ params }: Props) {
 
   const relatedProjects = rawProjects.filter((p) => p.slug !== project.slug).slice(0, 3);
 
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": project.title,
+    "headline": project.title,
+    "description": project.overview || project.description,
+    "image": `https://silverline-engineering.com${project.localImage}`,
+    "url": `https://silverline-engineering.com/projects/${project.slug}`,
+    "provider": {
+      "@type": "Organization",
+      "name": "Silverline Engineering Limited",
+      "url": "https://silverline-engineering.com",
+    },
+    "locationCreated": {
+      "@type": "Place",
+      "name": project.location,
+    },
+    ...(project.testimonial
+      ? {
+          "review": {
+            "@type": "Review",
+            "reviewBody": project.testimonial.quote,
+            "author": {
+              "@type": "Person",
+              "name": project.testimonial.author,
+            },
+          },
+        }
+      : {}),
+  };
+
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
       <Navbar />
 
       {/* Albion Project Detail Header */}
