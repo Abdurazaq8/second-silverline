@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const pageUrl = `https://silverline-engineering.com/projects/${project.slug}`;
+  const pageUrl = `https://silverlinengineeringltd.com/projects/${project.slug}`;
 
   return {
     title: `${project.title} | Silverline Engineering Case Study`,
@@ -74,12 +74,12 @@ export default async function ProjectPage({ params }: Props) {
     "name": project.title,
     "headline": project.title,
     "description": project.overview || project.description,
-    "image": `https://silverline-engineering.com${project.localImage}`,
-    "url": `https://silverline-engineering.com/projects/${project.slug}`,
+    "image": `https://silverlinengineeringltd.com${project.localImage}`,
+    "url": `https://silverlinengineeringltd.com/projects/${project.slug}`,
     "provider": {
       "@type": "Organization",
       "name": "Silverline Engineering Limited",
-      "url": "https://silverline-engineering.com",
+      "url": "https://silverlinengineeringltd.com",
     },
     "locationCreated": {
       "@type": "Place",

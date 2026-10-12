@@ -4,7 +4,7 @@ import { rawProjects } from "@/lib/projects";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://silverline-engineering.com";
+  const baseUrl = "https://silverlinengineeringltd.com";
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {

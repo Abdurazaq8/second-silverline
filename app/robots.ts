@@ -26,7 +26,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://silverline-engineering.com/sitemap.xml",
-    host: "https://silverline-engineering.com",
+    sitemap: "https://silverlinengineeringltd.com/sitemap.xml",
+    host: "https://silverlinengineeringltd.com",
   };
 }

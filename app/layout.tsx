@@ -12,7 +12,7 @@ const barlow = Barlow({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://silverline-engineering.com"),
+  metadataBase: new URL("https://silverlinengineeringltd.com"),
   title: "Silverline Engineering - Quality Construction & Engineering Services",
   description: "Zambian owned Construction Company specializing in Civil, Electrical, Mechanical, and Solar Engineering services.",
   keywords: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   creator: "Silverline Engineering Limited",
   publisher: "Silverline Engineering Limited",
   alternates: {
-    canonical: "https://silverline-engineering.com",
+    canonical: "https://silverlinengineeringltd.com",
   },
   formatDetection: {
     email: false,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Silverline Engineering - Quality Construction & Engineering Services",
     description: "Leading construction and engineering firm in Zambia delivering excellence in Civil, Electrical, Mechanical, and Solar Engineering.",
-    url: "https://silverline-engineering.com",
+    url: "https://silverlinengineeringltd.com",
     siteName: "Silverline Engineering",
     images: [
       {
@@ -83,12 +83,12 @@ const jsonLd = {
   "@graph": [
     {
       "@type": ["ConstructionBusiness", "GeneralContractor", "ProfessionalService"],
-      "@id": "https://silverline-engineering.com/#organization",
+      "@id": "https://silverlinengineeringltd.com/#organization",
       "name": "Silverline Engineering Limited",
       "legalName": "Silverline Engineering Limited",
-      "url": "https://silverline-engineering.com",
-      "logo": "https://silverline-engineering.com/silverline-logo.png",
-      "image": "https://silverline-engineering.com/og-image.jpg",
+      "url": "https://silverlinengineeringltd.com",
+      "logo": "https://silverlinengineeringltd.com/silverline-logo.png",
+      "image": "https://silverlinengineeringltd.com/og-image.jpg",
       "description": "Leading Zambian engineering and construction company delivering excellence in Civil, Electrical, Mechanical, and Solar Engineering.",
       "email": "info@silverlineng.com",
       "telephone": ["+260966626579", "+260771814040", "+260977467664"],
@@ -184,11 +184,11 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://silverline-engineering.com/#website",
-      "url": "https://silverline-engineering.com",
+      "@id": "https://silverlinengineeringltd.com/#website",
+      "url": "https://silverlinengineeringltd.com",
       "name": "Silverline Engineering",
       "publisher": {
-        "@id": "https://silverline-engineering.com/#organization"
+        "@id": "https://silverlinengineeringltd.com/#organization"
       }
     }
   ]
